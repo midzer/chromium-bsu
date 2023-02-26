@@ -1,0 +1,86 @@
+Chromium B.S.U. Installation
+----------------------------
+
+Be sure to install the -dev or -devel packages of the prerequisites.
+
+Prerequisites
+------------------
+
+Graphics:        OpenGL and GLU (mesa for e.g.)
+
+Window & input:  SDL 1.1.6 or greater
+                 GLUT is an alternative
+
+Sound:           OpenAL and ALUT
+                 SDL Mixer is an alternative
+
+Image loading:   glpng
+                 SDL_image is an alternative but has rendering issues
+
+Text rendering:  GLC (QuesoGLC for e.g.)
+                 FTGL 2.1.3 or greater is an alternative
+
+Font:            Gothic Uralic bold recommended
+                 any TrueType font is an alternative
+
+OPTIONAL
+--------
+
+Building with SDL_image allows the game to set a window icon when using SDL.
+
+If you would like a translated interface you should build with gettext & GLC.
+
+The GLC text rendering backend supports using a different default font:
+
+./configure --with-font-name="Gothic Uralic"
+
+The FTGL text rendering backend is less flexible in its font searching.
+
+To make it more flexible you should either build with fontconfig support or
+specify a path to the desired font, this is useful for distributions where
+the package system can then depend on the desired font:
+
+./configure --with-font-path=/usr/share/fonts/truetype/uralic/gothub__.ttf
+
+Install
+---------------------
+
+./configure <options> && make && sudo make install
+
+You may also want to check the FAQ:
+
+http://chromium-bsu.sf.net/faq.html
+
+If you encounter any problems, please post a support request:
+
+https://sf.net/p/chromium-bsu/support
+
+Development version
+---------------------
+
+Prerequisites
+------------------
+
+Install these when building from the VCS:
+
+autoconf
+automake
+gettext
+pkg-config
+autoconf OpenGL macros provided by:
+  autoconf-archive < 20111221
+  autoconf-gl-macros
+  autoconf-archive >= 20130609
+
+Pre-build step
+------------------
+
+Run this command to recreate the build system:
+
+autoreconf --symlink --install --force
+
+Then you can build and install in the current directory:
+
+./configure --prefix $PWD/install
+make install
+export PATH=$PWD/install:$PATH

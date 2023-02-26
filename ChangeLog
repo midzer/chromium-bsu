@@ -1,0 +1,1751 @@
+2016-09-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS, configure.ac: Release version 0.9.16.1
+
+2016-09-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Pass actions for found/not-found to AX_CHECK_GLUT.  AX_CHECK_GLUT from autoconf-archive 20160320 gives an error when
+	GLUT is not found and no action for not-found is set.  Set no_glut=yes for compatibility with the earlier version.  Fixes this error when SDL is installed but GLUT is not: configure: error: Could not find a valid GLUT implementation
+
+2016-08-02  Ed Goforth <egoforth@users.sf.net>
+
+	* src/AudioSDLMixer.cpp: Fix compile error with SDL_Mixer Add two missing #ifdef USE_SDL_CDROM Fixes: https://sf.net/p/chromium-bsu/bugs/27/
+
+2016-07-23  Paul Wise <pabs3@bonedaddy.net>
+
+	* .gitignore, misc/Makefile.am: Remove duplicate file from the
+	source tree This is a slight waste of disk space.  Suggested-by: fdupes
+
+2016-07-23  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po, po/fr.po, po/it.po, po/ro.po,
+	po/ru.po, po/sv.po, po/tr.po, po/zh_CN.po, po/zh_TW.po: Update
+	translations
+
+2016-07-23  Paul Wise <pabs3@bonedaddy.net>
+
+	* .gitignore, misc/Makefile.am, misc/{chromium-bsu.desktop =>
+	chromium-bsu.desktop.in}, po/LINGUAS, po/POTFILES.in, po/ro.po,
+	po/sv.po: Switch translations of the .desktop file from manual
+	editing to gettext This is more in line with the usual translation workflows, which may
+	help get more translators to translate the .desktop file.  Inspired-by:
+	https://blogs.gnome.org/mclasen/2016/07/21/using-modern-gettext/
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* .gitignore: Tell git to ignore detached OpenPGP signature files
+	too
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS, configure.ac: Release version 0.9.16
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am: Include autogen.sh script in the tarball
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po, po/fr.po, po/it.po, po/ru.po,
+	po/sv.po, po/tr.po, po/zh_CN.po, po/zh_TW.po: Update translations
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Fix build on FreeBSD with libc++ 3.8.0 Fixes: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209591
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install, data/doc/Makefile.am, data/doc/{faq.htm =>
+	faq.html}, data/doc/{info.htm => info.html}: Rename .htm files to
+	.html Times have changed, all OSes support extensions longer than 3 chars.
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* COPYING, NEWS, README.install, misc/chromium-bsu.6, src/Ammo.cpp,
+	src/Ammo.h, src/Audio.cpp, src/Audio.h, src/AudioOpenAL.cpp,
+	src/AudioOpenAL.h, src/AudioSDLMixer.cpp, src/AudioSDLMixer.h,
+	src/Config.cpp, src/Config.h, src/EnemyAircraft.cpp,
+	src/EnemyAircraft.h, src/EnemyAircraft_Boss00.cpp,
+	src/EnemyAircraft_Boss00.h, src/EnemyAircraft_Boss01.cpp,
+	src/EnemyAircraft_Boss01.h, src/EnemyAircraft_Gnat.cpp,
+	src/EnemyAircraft_Gnat.h, src/EnemyAircraft_Omni.cpp,
+	src/EnemyAircraft_Omni.h, src/EnemyAircraft_RayGun.cpp,
+	src/EnemyAircraft_RayGun.h, src/EnemyAircraft_Straight.cpp,
+	src/EnemyAircraft_Straight.h, src/EnemyAircraft_Tank.cpp,
+	src/EnemyAircraft_Tank.h, src/EnemyAmmo.cpp, src/EnemyAmmo.h,
+	src/EnemyFleet.cpp, src/EnemyFleet.h, src/Explosions.cpp,
+	src/Explosions.h, src/Global.cpp, src/Global.h, src/Ground.cpp,
+	src/Ground.h, src/GroundMetal.cpp, src/GroundMetal.h,
+	src/GroundMetalSegment.cpp, src/GroundMetalSegment.h,
+	src/GroundSea.cpp, src/GroundSea.h, src/GroundSeaSegment.cpp,
+	src/GroundSeaSegment.h, src/GroundSegment.cpp, src/GroundSegment.h,
+	src/HeroAircraft.cpp, src/HeroAircraft.h, src/HeroAmmo.cpp,
+	src/HeroAmmo.h, src/HiScore.cpp, src/HiScore.h, src/MainGL.cpp,
+	src/MainGL.h, src/MainGLUT.cpp, src/MainGLUT.h, src/MainSDL.cpp,
+	src/MainSDL.h, src/MainSDL_Event.cpp, src/MainToolkit.cpp,
+	src/MainToolkit.h, src/MenuGL.cpp, src/MenuGL.h, src/PowerUps.cpp,
+	src/PowerUps.h, src/ScreenItem.cpp, src/ScreenItem.h,
+	src/ScreenItemAdd.cpp, src/ScreenItemAdd.h, src/StatusDisplay.cpp,
+	src/StatusDisplay.h, src/compatibility.h, src/define.h,
+	src/extern.h, src/main.cpp, src/main.h, src/textGeometry.h,
+	src/textGeometryBSU.cpp, src/textGeometryChromium.cpp: Strip
+	trailing whitespace
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Add some missing autoconf checks Suggested-by: autoscan
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Drop whitespace from AC_INIT call Suggested-by: autoupdate
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am: Delete autotools compile script too
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* data/doc/faq.htm, src/Audio.cpp, src/AudioOpenAL.cpp,
+	src/EnemyAircraft_Gnat.cpp: Fix some spelling and grammar issues Suggested-by: spellintian --picky
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install, configure.ac, po/bg.po, po/de.po, po/es.po,
+	po/fr.po, po/it.po, po/ru.po, po/sv.po, po/tr.po, po/zh_CN.po,
+	po/zh_TW.po: Shorten the URLs to sf.net a bit sf.net/p redirects to sf.net/projects
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install, configure.ac, data/doc/faq.htm, po/bg.po,
+	po/de.po, po/es.po, po/fr.po, po/it.po, po/ru.po, po/sv.po,
+	po/tr.po, po/zh_CN.po, po/zh_TW.po: Switch from http to https links
+	where possible https links are more secure than http
+
+2016-06-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp, src/Config.cpp, src/HiScore.cpp,
+	src/define.h, src/main.cpp: Fix warnings with C++11 and GCC 6 define.h:42:23: warning: invalid suffix on literal; C++11 requires a
+	 space between literal and string macro [-Wliteral-suffix] #define
+	                       CONFIG_FILE   "."PACKAGE ^
+
+2015-10-21  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Image.h: Add missing headers to Image.h
+
+2013-12-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, data/doc/faq.htm: Fix some typos found by codespell
+
+2013-11-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/de.po: Update Deutsch (German) translation Translator: Sebastian Riemer <sebastian.riemer@gmx.de>
+
+2013-11-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/de.po, po/es.po, po/ru.po, po/tr.po: Set the Language-Team to
+	Transifex where it is empty or invalid
+
+2013-11-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/tr.po: Update Türkçe (Turkish) translation Translator: Ahmet Sezgin Duran <marjinalist1@gmail.com>
+
+2013-11-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/it.po: Update Italiano (Italian) translation Translator: Marco Mangiacavalli <Marco91> Translator: Rossano
+	Praderi <dshortway@gmail.com>
+
+2013-11-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/de.po: Update German (Deutsch) translation Translator: Sebastian Riemer <sebastian.riemer@gmx.de>
+
+2013-11-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/es.po, po/fr.po, po/it.po, po/ru.po, po/sv.po,
+	po/tr.po, po/zh_CN.po, po/zh_TW.po: Sync the lists of translators
+	with Transifex's, except with full names.
+
+2013-11-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/es.po, po/it.po: Drop X-Generator from the
+	translation since it isn't useful and changes.
+
+2013-11-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po, po/fr.po, po/it.po, po/ru.po,
+	po/sv.po, po/tr.po, po/zh_CN.po, po/zh_TW.po, src/MainSDL_Event.cpp: 
+	Don't translate some strings that don't need translating Fixes:
+
+	https://www.transifex.com/projects/p/chromium-bsu/translate/#de/chromium-bsupot/591990
+
+2013-11-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po, po/fr.po, po/it.po, po/ru.po,
+	po/sv.po, po/tr.po, po/zh_CN.po, po/zh_TW.po: Update translation
+	files for new messages
+
+2013-10-22  Sebastian Riemer <sebastian.riemer@gmx.de>
+
+	* misc/chromium-bsu.6, po/bg.po, po/de.po, po/es.po, po/fr.po,
+	po/it.po, po/ru.po, po/sv.po, po/tr.po, po/zh_CN.po, po/zh_TW.po,
+	src/main.cpp: Show version information on the command-line.  Signed-off-by: Paul Wise <pabs3@bonedaddy.net>
+
+2013-09-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* .gitignore: automake-1.4: ignore the new 'compile' script
+
+2013-09-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: SDL2: SDL_Keysym no longer has a member
+	called unicode
+
+2013-09-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: SDL2: SDL_GetKeyboardState returns a const
+	Uint8*
+
+2013-07-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/fr.po: Use DejaVu Sans for the French translation too Fixes: http://bugs.debian.org/716690
+
+2013-06-22  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install: autoconf OpenGL macros were re-added to
+	autoconf-archive
+
+2013-06-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: SDL2: Check for SDL2/image/mixer and use them when
+	available.
+
+2011-12-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, misc/chromium-bsu.6, src/Audio.cpp, src/Audio.h,
+	src/AudioOpenAL.cpp, src/Config.cpp, src/Config.h, src/MainSDL.cpp: 
+	SDL2: only use SDL CDROM support when it is available
+
+2013-05-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL.cpp, src/MainSDL.h, src/MainSDL_Event.cpp: SDL2:
+	switch from global operations to creating a window.
+
+2011-12-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Image.cpp: SDL2: colorkey and alpha are now in SDL_Surface,
+	not SDL_PixelFormat
+
+2011-12-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL.cpp: SDL2: SDL_GetError now returns a const char *
+
+2013-06-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL.h, src/MainSDL_Event.cpp: SDL2: cope with window
+	events in addition to activation events.
+
+2011-12-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: SDL2: keyboard scancodes have a new type.
+
+2013-06-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: SDL2: Some SDLK_KP* constants were renamed
+	to SDLK_KP_*
+
+2013-06-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: SDL2: SDL_GetKeyboardState array uses
+	SDL_SCANCODE_* instead of SDLK_*
+
+2013-06-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL.cpp: Set the window manager icon after creating a
+	window
+
+2013-05-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS, configure.ac: Release version 0.9.15.1
+
+2013-05-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po, po/fr.po, po/it.po, po/ru.po,
+	po/sv.po, po/tr.po, po/zh_CN.po, po/zh_TW.po: Translation file
+	updates
+
+2013-05-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* .tx/config: Switch to HTTPS transifex.com
+
+2013-05-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Split out orthogonal image library detection tests.  This reduces complexity & will help with the future SDL2 port.
+
+2011-12-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Image.cpp: Add missing include for glu.h in the image loader.
+
+2013-05-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/Makefile.am: Install the application icon into the hicolor
+	theme dir
+
+2013-05-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* data/png/Makefile.am, src/MainSDL.cpp: Drop duplicate icon
+
+2013-05-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium-bsu.desktop: Add some keywords to the freedesktop
+	menu file
+
+2013-05-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Audio.cpp, src/AudioOpenAL.cpp, src/HiScore.cpp: Check the
+	return codes of functions declared with warn_unused_result
+
+2013-05-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainGL.cpp: Drop an unused variable
+
+2013-05-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/EnemyFleet.cpp, src/GroundMetal.cpp, src/GroundSea.cpp,
+	src/StatusDisplay.cpp: Comply with C++11 rules about narrowing
+	conversions inside {}
+
+2013-05-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, src/AudioSDLMixer.h: Switch to using pkg-config for
+	detecting SDL_mixer
+
+2013-05-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, src/Image.cpp, src/MainSDL.cpp: Switch to using
+	pkg-config for detecting SDL_image
+
+2013-05-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Audio.h, src/Image.cpp, src/MainSDL.cpp, src/MainSDL.h: Use
+	the SDL header paths returned by pkg-config.
+
+2012-10-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/de.po: Fix syntax error in German translation file
+
+2012-10-21  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Fix movement using the diagonal keys on
+	keypads
+
+2012-10-09  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/bg.po, po/de.po, po/es.po, po/fr.po, po/it.po,
+	po/ru.po, po/sv.po, po/tr.po, po/zh_CN.po, po/zh_TW.po: Pull
+	translation updates from transifex, update translation files.
+
+2012-10-09  Paul Wise <pabs3@bonedaddy.net>
+
+	* .gitignore: Get git to ignore some files
+
+2012-10-09  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am: Clean up some more files on maintainer-clean
+
+2012-06-04  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install: AX_CHECK_GL* moved from autoconf-archive to
+	autoconf-gl-macros
+
+2012-05-24  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainGL.cpp: Do not assign a variable to itself
+
+2012-05-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Text.cpp: The std namespace is implicit, no need to explcitly
+	say we are using it.
+
+2011-12-08  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/EnemyAircraft_Straight.cpp, src/HeroAmmo.cpp, src/HiScore.cpp: 
+	Fix some printf format issues
+
+2011-12-08  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/EnemyAircraft_Boss00.cpp, src/EnemyAircraft_Tank.cpp: Avoid
+	undefined behaviour with the ++ and % operators
+
+2011-12-02  Tristan Heaven <tristanheaven@gmail.com>
+
+	* src/MenuGL.cpp: Silence the GCC -Wformat-security warning
+
+2011-12-02  Tristan Heaven <tristanheaven@gmail.com>
+
+	* src/main.cpp, src/textGeometryBSU.cpp,
+	src/textGeometryChromium.cpp: Include some headers that are
+	responsible for setting argument defaults.
+
+2011-12-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp, src/EnemyAircraft_Straight.cpp,
+	src/MainSDL.cpp, src/MenuGL.cpp: Drop some variables that are set
+	but not used.
+
+2011-11-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: SDL_GetKeyState was renamed SDL 1.3,
+	support SDL_GetKeyboardState too Thanks to Sam Hocevar for the advice.
+
+2011-10-31  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/fr.po: Unfuzzy some French translations.  Pulled from Transifex.
+
+2011-10-31  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/ru.po: Add Russian translation from Transifex Translator: Евгений Лежнин <z_lezhnin@mail2000.ru>
+
+2011-10-31  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/zh_CN.po: Add 简体中文 (Simplified Chinese)
+	translation Translator: Wei-Lun Chao <chaoweilun@gmail.com> Translator: Long
+	Si-Tai-Zi <longsitaizi@gmail.com>
+
+2011-02-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp: Do not leak a file descriptor when loading a
+	music list
+
+2011-02-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS: Release version 0.9.15
+
+2011-02-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* .tx/config: Add the transifex configuration file
+
+2011-02-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po, po/fr.po, po/it.po, po/sv.po: Pull
+	some translation fixes from Transifex
+
+2011-02-11  Evgeni Golov <sargentd@die-welt.net>
+
+	* po/de.po: Update German (Deutsch) translation
+
+2011-02-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL.cpp: Initialise the horizontal key movement speed
+	properly
+
+2011-02-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: WIP new version
+
+2011-02-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Image.cpp: Remove the unused pitch variable
+
+2011-02-09  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po: Updates to Български език (Bulgarian)
+	translation by Damyan Ivanov <dmn@debian.org>
+
+2011-02-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po, po/fr.po, po/it.po, po/sv.po,
+	po/zh_TW.po: Update translations to correspond to latest code.
+
+2011-02-03  Paul Wise <pabs3@bonedaddy.net>
+
+	* autogen.sh: Add an autogen.sh that is just an autoreconf wrapper.
+
+2011-01-04  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium-bsu.6: Document the controls in the manual page.
+
+2011-01-04  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium-bsu.6, src/Config.cpp, src/Config.h,
+	src/HeroAircraft.cpp, src/MainSDL.cpp, src/MainSDL.h,
+	src/MainSDL_Event.cpp, src/MenuGL.cpp, src/MenuGL.h: Implement
+	2014451: Add support for playing on a keyboard to the SDL backend.  Thanks to Doruk Fisek and Cristian Henzel for playtesting.
+
+2011-01-28  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Use AM_CONFIG_HEADER replaced by AC_CONFIG_HEADERS
+	in autoconf 2.54.
+
+2010-12-17  Andrew Harrison <gamefreak1974@hotmail.com>
+
+	* src/ScreenItemAdd.cpp, src/ScreenItemAdd.h: Add a new fourth level
+
+2011-01-09  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium-bsu.6: Fix formatting issue in the manual page
+
+2011-01-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Take the pause state into account properly
+	when grabbing the mouse.
+
+2010-12-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MenuGL.cpp: Change the skill level names back to what they
+	have been since the beginning.  Doruk Fisek pointed out that this change could be confusing to
+	users.
+
+2010-12-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am: Only generate the ChangeLog file when it is
+	appropriate to do so.
+
+2010-12-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Config.cpp: Add a header to the config file for docs &
+	preservation
+
+2010-12-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MenuGL.cpp: Since the highest difficulty is clearly not
+	impossible, make it insane and change the insane difficulty to
+	hardcore.  http://www.youtube.com/watch?v=KzSEUl0-3p8
+
+2010-12-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: Add path dir separator translator for Windows
+
+2010-12-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium-bsu.6, src/Config.cpp, src/Config.h,
+	src/MainGLUT.cpp, src/MenuGL.cpp: Switch from screenSize
+	configuration options to screenWidth & screenHeight.
+
+2010-12-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/define.h: No need to repeat screen index in comment
+
+2010-12-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* src-setup/.chromium-music, src-setup/Audio.cpp,
+	src-setup/Audio.h, src-setup/ConfigFile.cpp,
+	src-setup/ConfigFile.h, src-setup/HelpPage.cpp,
+	src-setup/HelpPage.h, src-setup/HiScoreWidget.cpp,
+	src-setup/HiScoreWidget.h, src-setup/MainWidget.cpp,
+	src-setup/MainWidget.h, src-setup/PlayList.cpp,
+	src-setup/PlayList.h, src-setup/SETUP.pro, src-setup/icon.xpm,
+	src-setup/main.cpp, src-setup/main.h, src-setup/moc/.dummyfile,
+	src/define.h: Drop the configuration GUI since it uses an ancient
+	version of Qt.
+
+2010-12-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium-bsu.6, po/bg.po, po/de.po, po/es.po, po/fr.po,
+	po/it.po, po/sv.po, po/zh_TW.po, src-setup/ConfigFile.cpp,
+	src/MenuGL.cpp: Fix misspelling of wimp.
+
+2010-11-16  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/es.po: Fix Spanish translation of the empty score file warning
+	message
+
+2010-11-15  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/it.po: Updates to Italiano (Italian) translation by muflone
+	<webreg@vbsimple.net>
+
+2010-11-12  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/zh_TW.po: Fix zh_TW translation of the empty score file warning
+	message
+
+2010-11-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, po/Makevars, po/bg.po, po/de.po, po/es.po,
+	po/fr.po, po/it.po, po/sv.po, po/zh_TW.po: Do not wrap messages or
+	translations in PO files, update translations.
+
+2010-11-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/zh_TW.po: Add Traditional Chinese translation by
+	Emmanuel Trillaud <etrillaud@gmail.com> and Wei-Lun Chao
+	<chaoweilun@gmail.com>
+
+2010-11-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS: Wrap the languages file so that diffs to it are easier
+	to review
+
+2010-10-31  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/HiScore.cpp: Fix 2714088: Change the high scores file from a
+	memory dump to plain text.  Users with an existing high scores file in memory dump format will
+	have their high scores file converted to plain text on startup.
+
+2010-10-09  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/it.po: Add Italiano (Italian) translation by Valter
+	Mura <valtermura@gmail.com>
+
+2010-07-06  Dmitry Marakasov <amdmi3@amdmi3.ru>
+
+	* src/Makefile.am: Add INTLLIBS to LDADD because gettext is a
+	seperate library on FreeBSD
+
+2010-07-06  Dmitry Marakasov <amdmi3@amdmi3.ru>
+
+	* configure.ac: Remove some bashisms from the configure script
+
+2010-06-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainGLUT.cpp: The GLUT header is available at a different path
+	on MacOS X, handle it.
+
+2010-06-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, src/Image.cpp, src/MainGL.cpp: The glpng header has
+	a different path in Fink on MacOS X, allow for it.
+
+2010-06-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/EnemyAircraft.h, src/EnemyAmmo.cpp, src/EnemyAmmo.h,
+	src/EnemyFleet.cpp, src/EnemyFleet.h, src/Explosions.cpp,
+	src/Explosions.h, src/Ground.h, src/GroundMetal.h,
+	src/GroundMetalSegment.cpp, src/GroundSea.h,
+	src/GroundSeaSegment.cpp, src/HeroAircraft.cpp, src/HeroAircraft.h,
+	src/HeroAmmo.cpp, src/HeroAmmo.h, src/Image.cpp, src/MainGL.cpp,
+	src/MainSDL.cpp, src/MenuGL.cpp, src/MenuGL.h, src/PowerUps.cpp,
+	src/PowerUps.h, src/StatusDisplay.cpp, src/StatusDisplay.h,
+	src/TextGLC.h, src/main.cpp, src/textGeometryBSU.cpp,
+	src/textGeometryChromium.cpp: AX_CHECK_GL switched from ./configure
+	--with-apple-opengl-framework to directly detecting which GL header
+	path is available, handle it.
+
+2010-06-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, configure.ac, src/Audio.cpp, src/Audio.h,
+	src/AudioOpenAL.cpp, src/AudioOpenAL.h, src/AudioSDLMixer.cpp,
+	src/Config.cpp, src/EnemyAircraft.cpp, src/EnemyAircraft.h,
+	src/EnemyAmmo.cpp, src/EnemyAmmo.h, src/EnemyFleet.cpp,
+	src/EnemyFleet.h, src/Explosions.cpp, src/Explosions.h,
+	src/Global.cpp, src/Ground.h, src/GroundMetal.cpp,
+	src/GroundMetal.h, src/GroundMetalSegment.cpp, src/GroundSea.cpp,
+	src/GroundSea.h, src/GroundSeaSegment.cpp, src/HeroAircraft.cpp,
+	src/HeroAircraft.h, src/HeroAmmo.cpp, src/HeroAmmo.h,
+	src/HiScore.cpp, src/Image.cpp, src/MainGL.cpp, src/MainGLUT.cpp,
+	src/MainSDL.cpp, src/MainSDL_Event.cpp, src/MenuGL.cpp,
+	src/MenuGL.h, src/PowerUps.cpp, src/PowerUps.h,
+	src/ScreenItemAdd.cpp, src/StatusDisplay.cpp, src/StatusDisplay.h,
+	src/Text.cpp, src/Text.h, src/TextFTGL.cpp, src/TextFTGL.h,
+	src/TextGLC.cpp, src/TextGLC.h, src/define.h, src/main.cpp,
+	src/textGeometryBSU.cpp, src/textGeometryChromium.cpp: Rename
+	config.h to chromium-bsu-config.h for portability.  On case-insensitive filesystems src/Config.h can override config.h,
+	which causes an FTBFS on Fink under MacOS X.
+
+2010-06-20  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/TextGLC.cpp: Fix 2987891 properly, thanks to the QuesoGLC
+	author for the help.
+
+2010-06-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS, configure.ac: Release version 0.9.14.1
+
+2010-06-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/TextGLC.cpp: Fix 2987891: fix error changing resolutions
+	caused by GLC error propagation
+
+2010-06-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* COPYING, README, src-setup/Audio.cpp, src-setup/Audio.h,
+	src-setup/ConfigFile.cpp, src-setup/ConfigFile.h,
+	src-setup/HelpPage.cpp, src-setup/HelpPage.h,
+	src-setup/HiScoreWidget.h, src-setup/MainWidget.cpp,
+	src-setup/MainWidget.h, src-setup/PlayList.cpp,
+	src-setup/PlayList.h, src-setup/main.cpp, src-setup/main.h,
+	src/Ammo.cpp, src/Ammo.h, src/Audio.cpp, src/Audio.h,
+	src/AudioOpenAL.cpp, src/AudioOpenAL.h, src/AudioSDLMixer.cpp,
+	src/AudioSDLMixer.h, src/Config.cpp, src/Config.h,
+	src/EnemyAircraft.cpp, src/EnemyAircraft.h,
+	src/EnemyAircraft_Boss00.cpp, src/EnemyAircraft_Boss00.h,
+	src/EnemyAircraft_Boss01.cpp, src/EnemyAircraft_Boss01.h,
+	src/EnemyAircraft_Gnat.cpp, src/EnemyAircraft_Gnat.h,
+	src/EnemyAircraft_Omni.cpp, src/EnemyAircraft_Omni.h,
+	src/EnemyAircraft_RayGun.cpp, src/EnemyAircraft_RayGun.h,
+	src/EnemyAircraft_Straight.cpp, src/EnemyAircraft_Straight.h,
+	src/EnemyAircraft_Tank.cpp, src/EnemyAircraft_Tank.h,
+	src/EnemyAmmo.cpp, src/EnemyAmmo.h, src/EnemyFleet.cpp,
+	src/EnemyFleet.h, src/Explosions.cpp, src/Explosions.h,
+	src/Global.cpp, src/Global.h, src/Ground.cpp, src/Ground.h,
+	src/GroundMetal.cpp, src/GroundMetal.h, src/GroundMetalSegment.cpp,
+	src/GroundMetalSegment.h, src/GroundSea.cpp, src/GroundSea.h,
+	src/GroundSeaSegment.cpp, src/GroundSeaSegment.h,
+	src/GroundSegment.cpp, src/GroundSegment.h, src/HeroAircraft.cpp,
+	src/HeroAircraft.h, src/HeroAmmo.cpp, src/HeroAmmo.h,
+	src/HiScore.cpp, src/HiScore.h, src/Image.cpp, src/Image.h,
+	src/MainGL.cpp, src/MainGL.h, src/MainGLUT.cpp, src/MainGLUT.h,
+	src/MainSDL.cpp, src/MainSDL.h, src/MainSDL_Event.cpp,
+	src/MainToolkit.cpp, src/MainToolkit.h, src/MenuGL.cpp,
+	src/MenuGL.h, src/PowerUps.cpp, src/PowerUps.h, src/ScreenItem.cpp,
+	src/ScreenItem.h, src/ScreenItemAdd.cpp, src/ScreenItemAdd.h,
+	src/StatusDisplay.cpp, src/StatusDisplay.h, src/Text.cpp,
+	src/Text.h, src/TextFTGL.cpp, src/TextFTGL.h, src/TextGLC.cpp,
+	src/TextGLC.h, src/compatibility.h, src/define.h, src/extern.h,
+	src/main.cpp, src/main.h, src/textGeometry.h,
+	src/textGeometryBSU.cpp, src/textGeometryChromium.cpp: Re-license to
+	the Clarified Artistic License with the permission of current
+	copyright holders to allow Chromium B.S.U. to be distributed by
+	Fedora.
+
+2010-06-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/fr.po, po/sv.po: Refresh line numbers in
+	translations files.
+
+2010-06-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/es.po: Updates to Español (Spanish) translation by Jordi
+	Ferré Nos <jordiferren@gmail.com>
+
+2010-06-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp: Unset current OpenAL context on exit.
+
+2010-06-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainGL.cpp: Delete font textures on exit.
+
+2010-06-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/ScreenItemAdd.cpp: Don't forget to delete the deadPool objects
+	created in ScreenItemAdd obj.
+
+2010-06-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: Do not access the configuration object after it has
+	been deleted.
+
+2010-06-03  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/TextFTGL.cpp: Fix return from Advance and LineHeight in FTGL
+	renderer.
+
+2010-06-03  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp: Fix Debian 584372: don't cast the argument to
+	alutCreateBufferFromFile.
+
+2010-06-03  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS: Convert encoding of NEWS file to UTF-8.
+
+2010-05-08  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install, configure.ac, src/EnemyAmmo.cpp,
+	src/EnemyFleet.cpp, src/Explosions.cpp, src/GroundMetal.cpp,
+	src/GroundSea.cpp, src/HeroAircraft.cpp, src/HeroAmmo.cpp,
+	src/Image.cpp, src/Image.h, src/MainGL.cpp, src/Makefile.am,
+	src/MenuGL.cpp, src/PowerUps.cpp, src/StatusDisplay.cpp: Apply
+	2153247: Add support for SDL Image in addition to glpng.  One rendering glitch is remaining.  Initial patch by Tristan Heaven <nyhm@gentoo.org>
+
+2010-04-13  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/fr.po: Updates to Français (French) translation by Emmanuel
+	Trillaud <etrillaud@gmail.com>
+
+2010-04-08  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/fr.po: Updates to Français (French) translation by Emmanuel
+	Trillaud <etrillaud@gmail.com>
+
+2010-03-24  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/sv.po: Updates to Svenska (Swedish) translation by Jonathan
+	Svarden (degasus) <jonathan.svarden@gmail.com>
+
+2010-03-24  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/fr.po: Add Français (French) translation by
+	Emmanuel Trillaud <etrillaud@gmail.com>
+
+2010-03-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po, po/sv.po, src/Global.cpp,
+	src/MainSDL.cpp: Update translations and clarify some English
+	strings.  English string changes suggested by Evgeni Golov.  German string
+	changes suggested by Michael Kronsteiner.
+
+2010-03-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/sv.po: Add Svenska (Swedish) translation by Daniel
+	Nylander <po@danielnylander.se>
+
+2010-02-28  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Fix 2782755: fix keyboard handling when you
+	are dead or finished the level.  Pressing any key at the end of the level now skips the victory
+	screen.  Pressing any key when you are dead now starts a new game.
+	Before the menu keyboard handling was being used, which meant a new
+	game would start for any key pressed at the end of a level or game.
+
+2010-01-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* data/doc/faq.htm: Escape < and > in the FAQ
+
+2010-01-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* data/doc/faq.htm: Add a FAQ entry about donating to the project
+
+2009-04-16  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainGLUT.cpp, src/MainGLUT.h, src/MainSDL.cpp, src/MainSDL.h,
+	src/MainToolkit.h, src/MenuGL.cpp: Fix 2767549: instead of exiting,
+	show an error message on the screen when unable to change the video
+	mode.
+
+2009-04-12  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Add missing check for pkg-config
+
+2009-03-29  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS, configure.ac: Release version 0.9.14
+
+2009-03-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* AUTHORS: Update AUTHORS with names of translators, a new code
+	contributor and nicknames of existing code contributors.
+
+2009-03-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/bg.po, po/de.po, po/es.po: Update translations for the recent
+	string changes.
+
+2009-03-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp: Fix typos in the config file migration that
+	prevent building.
+
+2009-03-29  Alwyn Malachi Berkeley <malachix@malachix.com>
+
+	* po/LINGUAS, po/es.po: Modified spanish translation and added to
+	LINGUAS
+
+2009-03-29  Alwyn Malachi Berkeley <malachix@malachix.com>
+
+	* : commit a19fa20ac3683bc585a32a1ff1b7fd538fc8c2bb Author: Alwyn
+	Malachi Berkeley <malachix@malachix.com> Date:   Sun Mar 29 02:17:03
+	2009 -0400
+
+2009-03-27  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp, src/Config.cpp, src/Config.h,
+	src/HiScore.cpp, src/HiScore.h, src/define.h: Automatically migrate
+	configuration files, scores, music to the new names.
+
+2009-03-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, data/doc/faq.htm, data/doc/info.htm,
+	misc/Makefile.am, misc/{chromium.6 => chromium-bsu.6},
+	misc/{chromium.desktop => chromium-bsu.desktop}, src/HiScore.cpp,
+	src/Makefile.am, src/TextFTGL.cpp, src/TextGLC.cpp, src/main.cpp: 
+	Vacate the chromium package in favour of chromium-bsu.  This is because Google has named their browser chromium and also for
+	consistency with the "Chromium B.S.U." name.
+
+2009-03-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, README.install, configure.ac, data/doc/faq.htm,
+	misc/chromium.6, src/Audio.cpp, src/AudioOpenAL.cpp,
+	src/HiScore.cpp, src/MainGL.cpp, src/define.h, src/main.cpp: Be more
+	flexible about the package name
+
+2009-03-29  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MenuGL.cpp, src/main.cpp: Move the "download chromium here"
+	message to the game menu.
+
+2009-03-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install, configure.ac, data/png/Makefile.am,
+	src/MainSDL.cpp: Enable window icon with SDL window backend when
+	SDL_image is available
+
+2009-03-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Doxyfile: Remove the doxygen configuration file since it is
+	hopelessly out of date.
+
+2009-03-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, svn2cl-authors.txt: Now that chromium has switched to
+	git, use git2cl for creating the ChangeLog
+
+2009-03-13  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.6, src/Audio.cpp, src/AudioOpenAL.cpp,
+	src/Config.cpp, src/Config.h, src/EnemyAircraft_Straight.cpp,
+	src/EnemyFleet.cpp, src/Global.cpp, src/HeroAmmo.cpp,
+	src/HiScore.cpp, src/MainGL.cpp, src/MainGLUT.cpp, src/MainSDL.cpp,
+	src/MainSDL_Event.cpp, src/MenuGL.cpp, src/PowerUps.cpp,
+	src/main.cpp: Introduce new debug config option and silence most
+	information printed to the console when it is off.
+
+2009-03-13  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainGLUT.cpp: Fix pressing enter on the quit menu item with
+	the GLUT backend.
+
+2009-03-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/bg.po: Add Български език (Bulgarian)
+	translation by Damyan Ivanov <dmn@debian.org>
+
+2009-03-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MenuGL.cpp: Fix text rendering issue with the tips on the menu
+	by using mbstowcs to count UTF-8 characters since strlen counts
+	bytes rather than characters.
+
+2009-03-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* data/wav/license.txt: Remove unnecessary parts from the audio
+	copyright info.
+
+2009-03-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install: Add a section on the development version to the
+	install instructions.
+
+2009-03-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainGLUT.cpp: Fix FTBFS when using the GLUT windowing backend
+
+2009-03-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/TextGLC.cpp: Apply patch by Bertrand Coconnier (of QuesoGLC
+	fame) to fix display of multi-line text with the GLC backend.
+
+2009-03-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, src/Config.cpp: Read and write the configuration
+	file using the C locale to prevent messing up the menu.
+
+2009-03-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/gettext.h: Fix bug with the i18n patch that prevents building.
+
+2009-03-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* po/LINGUAS, po/de.po: Add Deutsch (German) translation by Evgeni
+	Golov <sargentd@die-welt.net>
+
+2009-03-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, README.install, configure.ac, m4/Makefile.am,
+	po/LINGUAS, po/Makevars, po/POTFILES.in, src/Audio.cpp,
+	src/AudioOpenAL.cpp, src/AudioSDLMixer.cpp, src/Config.cpp,
+	src/EnemyAircraft.cpp, src/EnemyAircraft_Straight.cpp,
+	src/EnemyFleet.cpp, src/Global.cpp, src/HeroAmmo.cpp,
+	src/HiScore.cpp, src/HiScore.h, src/MainGL.cpp, src/MainGLUT.cpp,
+	src/MainSDL.cpp, src/MainSDL_Event.cpp, src/Makefile.am,
+	src/MenuGL.cpp, src/MenuGL.h, src/PowerUps.cpp, src/ScreenItem.cpp,
+	src/ScreenItemAdd.cpp, src/StatusDisplay.cpp, src/TextFTGL.cpp,
+	src/TextGLC.cpp, src/gettext.h, src/main.cpp: Implement 2146376: add
+	i18n for the code of Chromium B.S.U.
+
+2009-03-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/HiScore.cpp: Don't save the high scores file unless there was
+	a new high score.
+
+2009-03-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/EnemyFleet.cpp: Fix Debian 498282 & Ubuntu 194690: if you lose
+	your last life and then kill a boss, don't go to the next level.
+
+2009-02-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* AUTHORS, svn2cl-authors.txt: Authorship cleanup
+
+2009-02-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, svn2cl-authors.txt: Build a ChangeLog using svn2cl
+	when making a tarball for distribution.
+
+2009-02-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Text.cpp: Silence some compiler warnings
+
+2009-02-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainGLUT.cpp, src/MainGLUT.h, src/MainSDL.h,
+	src/MainSDL_Event.cpp, src/MainToolkit.h: Release mouse when
+	switching to another window.
+
+2009-02-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, src/Makefile.am: Fix an error and warning caused by
+	the previous commit
+
+2009-02-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: WIP
+
+2009-02-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, data/Makefile.am, data/doc/Makefile.am,
+	data/doc/images/Makefile.am, src/Makefile.am: Separate items in
+	variables in Makefiles by newlines.
+
+2009-02-10  Paul Wise <pabs3@bonedaddy.net>
+
+	* README.install, configure.ac, misc/chromium.6, src/Config.cpp,
+	src/Config.h, src/Global.cpp, src/Global.h, src/MainGL.cpp,
+	src/Makefile.am, src/MenuGL.cpp, src/StatusDisplay.cpp,
+	src/Text.cpp, src/Text.h, src/TextFTGL.cpp, src/TextFTGL.h,
+	src/TextGLC.cpp, src/TextGLC.h: Add a text rendering API initially
+	supporting GLC and FTGL backends.  Thanks to Bertrand Coconnier for help with the GLC backend.
+
+2008-11-09  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Fix 2012135: allow linking against the glpng static
+	library as well as the shared library.
+
+2008-10-27  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Allow pause/unpause using the Pause key as
+	well as the p key.
+
+2008-10-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MenuGL.cpp: Fix 2000556: fix some text rendering issues due to
+	differences between FTGL and TexFont.
+
+2008-10-12  Paul Wise <pabs3@bonedaddy.net>
+
+	* AUTHORS, src/AudioSDLMixer.cpp: Apply 2158313: set sound and music
+	volume on startup. Patch by Tristan Heaven (nyhm)
+
+2008-10-03  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS, configure.ac: Release version 0.9.13.3
+
+2008-10-03  Paul Wise <pabs3@bonedaddy.net>
+
+	* AUTHORS: Add more contributor names
+
+2008-09-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, src-setup/Audio.cpp, src-setup/Audio.h,
+	src-setup/HiScoreWidget.cpp, src/AudioOpenAL.cpp,
+	src/AudioOpenAL.h, src/EnemyAircraft.h, src/EnemyAmmo.cpp,
+	src/EnemyAmmo.h, src/EnemyFleet.cpp, src/EnemyFleet.h,
+	src/Explosions.cpp, src/Explosions.h, src/Ground.h,
+	src/GroundMetal.cpp, src/GroundMetal.h, src/GroundMetalSegment.cpp,
+	src/GroundSea.cpp, src/GroundSea.h, src/GroundSeaSegment.cpp,
+	src/HeroAircraft.cpp, src/HeroAircraft.h, src/HeroAmmo.cpp,
+	src/HeroAmmo.h, src/MainGL.cpp, src/MainSDL.cpp, src/MenuGL.cpp,
+	src/MenuGL.h, src/PowerUps.cpp, src/PowerUps.h,
+	src/StatusDisplay.cpp, src/StatusDisplay.h, src/define.h,
+	src/main.cpp, src/textGeometryBSU.cpp, src/textGeometryChromium.cpp: 
+	Fix 2111081: improve MacOS X portability
+
+2008-09-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.desktop: Move chromium into arcade games and add a
+	couple of other desktop file improvements. Patch by Nille Kungen
+
+2008-09-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.6: Update manual page with configuration information
+
+2008-08-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Drop attempt at FHS compliance (/usr/games and
+	/usr/share/games).  It prevented customising bindir/datadir and it is too hard to work
+	out how to do it properly with current autoconf. Ideally autoconf
+	would make it easier to customise bindir and datadir.
+
+2008-08-30  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.6, src/Config.cpp: WIP
+
+2008-07-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: Partially fix 2011986: when using stat, need to
+	include the header, fixes building on Windows.
+
+2008-07-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* AUTHORS, src/MainGLUT.cpp: Apply 2015380: fix the linking with the
+	GLUT window type. Patch by Dmitry Marakasov.
+
+2008-07-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/EnemyAircraft.h: Partially apply 2011986: need to include
+	compatibility.h before gl.h for Win32. Patch by James Gregory.
+
+2008-07-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS, configure.ac: Release version 0.9.13.2
+
+2008-07-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL.cpp: Uppercase chromium in the SDL window title
+
+2008-07-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp, src/GroundMetal.cpp, src/MainGL.cpp: Fix some
+	more memory leaks and issues
+
+2008-07-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp, src/AudioOpenAL.h: Delete the OpenAL device
+	on shutdown
+
+2008-07-02  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Apply 2008917: allow switching between SDL/GLUT and
+	OpenAL/SDL Mixer using command-line options to ./configure. Patch by
+	Tristan Heaven (nyhm).
+
+2008-06-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS, configure.ac: Release version 0.9.13.1
+
+2008-06-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.6: Fix manual page whatis entry
+
+2008-06-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.6: Escape a couple of hyphens in the manual page
+
+2008-06-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp: When using new OpenAL we don't need the
+	variables only used by old OpenAL
+
+2008-06-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/Makefile.am: Install the freedesktop menu item and icon to
+	the right directory
+
+2008-06-25  Paul Wise <pabs3@bonedaddy.net>
+
+	* README: Fix typo
+
+2008-06-23  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac: Release version 0.9.13
+
+2008-06-20  Paul Wise <pabs3@bonedaddy.net>
+
+	* NEWS: Add a NEWS entry for the upcoming 0.9.13 release
+
+2008-06-20  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am: Don't try to distribute README.vorbis since we just
+	removed it.
+
+2008-06-20  Paul Wise <pabs3@bonedaddy.net>
+
+	* README, README.install, README.vorbis, configure.ac,
+	misc/chromium.6: Polish documentation and configure output
+
+2008-06-20  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, data/png/Makefile.am, data/wav/Makefile.am,
+	src/Makefile.am: Move bindir, datadir customisations to configure.ac
+	and pass pkgdatadir to gcc when building
+
+2008-06-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Makefile.am: Install the binary into the FHS location for game
+	binaries
+
+2008-06-19  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, configure.ac, data/Makefile.am,
+	data/doc/Makefile.am, data/doc/images/Makefile.am,
+	data/png/Makefile.am, data/wav/Makefile.am: Install the data and
+	docs too
+
+2008-06-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp: Improve OpenAL backend a bit;  - reduced leaks  - works with new ALUT file load  - works with OpenAL Soft  - improved startup/shutdown  - improved error reporting  - more portable to MacOS
+
+2008-06-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Audio.h: Fix bug in the autotools conversion that prevented
+	sound from working
+
+2008-06-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: Point users at the sourceforge site instead of the
+	Reptile Labour one.
+
+2008-06-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* AUTHORS: Add people to AUTHORS who have contributed code since I
+	took over
+
+2008-06-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* AUTHORS: Convert the AUTHORS file into UTF-8
+
+2008-06-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* data/doc/faq.htm: Remove extra whitespace at the end of the FAQ
+
+2008-06-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* data/doc/info.htm: Fix some image paths in the documentation
+
+2008-06-18  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure.ac, src/MainGL.cpp, src/MainGL.h, src/Makefile.am: Add
+	more flexibility in finding the font used to render text
+
+2008-06-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MenuGL.cpp: Fix high score display bug in the FTGL port.
+
+2008-06-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* : Remove empty directory that git-svn missed
+
+2008-06-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* Makefile.am, bin/.dummyfile, configure, configure.ac,
+	m4/Makefile.am, misc/Makefile.am, scripts/Makefile.all,
+	scripts/Makefile.no-setup, scripts/config.std,
+	scripts/configure_functions, src/Audio.cpp, src/AudioOpenAL.cpp,
+	src/AudioSDLMixer.cpp, src/CHROMIUM.pro, src/MainSDL.cpp,
+	src/MainSDL_Event.cpp, src/Makefile.IRIX, src/Makefile.am,
+	src/main.cpp: Switch to autotools for config, build and install
+	because qmake doesn't include config.mak and tmake is ancient.  Also
+	drop use of SMPEG since we don't directly use it.  Also ignore the
+	setup app for the moment.
+
+2008-06-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/LICENSE: Remove duplicate copy of the Artistic license
+
+2008-06-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* LICENSE => COPYING: Use the standard GNU naming for the COPYING
+	file.
+
+2008-06-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* INSTALL => README.install: Rename the INSTALL file in preparation
+	for switching to autotools.
+
+2008-06-17  Paul Wise <pabs3@bonedaddy.net>
+
+	* CHANGES => NEWS: Use the standard GNU naming for the NEWS file.
+
+2008-06-12  Brian W. Redfern <brianwredfern@gmail.com>
+
+	* data/wav/license.txt: changed from gpl to mit
+
+2008-06-09  Brian W. Redfern <brianwredfern@gmail.com>
+
+	* data/wav/license.txt: Added my royalty free donated sounds and
+	music along with midi files used to make the music.:X
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp: Allow building against OpenAL Soft - don't
+	use ALC_CHAN_CD_LOKI if it is not available.
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioSDLMixer.cpp: Partially fix 1957249: only call
+	Mix_CloseAudio once on shutdown. Patch by Alwyn Berkeley
+	<malachix@malachix.com>
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/StatusDisplay.cpp: Initialise the enemyWarn variable before it
+	is used.
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Audio.cpp, src/AudioSDLMixer.cpp: Partially fix 1957249: When
+	adjusting music volume through SDL_Mixer also adjust CD audio volume
+	on Linux using amixer from alsa-utils. Patch by Alwyn Berkeley
+	<malachix@malachix.com>
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioSDLMixer.cpp: Partially fix 1957249: Use cstdarg not
+	stdarg.h. Patch by Alwyn Berkeley <malachix@malachix.com>
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioSDLMixer.cpp: Partially fix 1957249: fix the
+	AudioSDLMixer::setSoundVolume() doxygen description. Patch by Alwyn
+	Berkeley <malachix@malachix.com>
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Global.cpp: Partially fix 1957249: delete the toolkit when we
+	destroy the game.
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Global.cpp: Partially fix 1957249: delete mainGL when we
+	delete a game. Patch by Alwyn Berkeley <malachix@malachix.com>
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/PowerUps.cpp: Partially fix 1957249: properly delete members
+	in the PowerUps destructor. Patch by Alwyn Berkeley
+	<malachix@malachix.com>
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/ScreenItemAdd.cpp: Partially fix 1957249: properly delete
+	members in the ScreenItemAdd destructor. Patch by Alwyn Berkeley
+	<malachix@malachix.com>
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: Partially fix 1957249: destroy the game object on
+	shutdown. Patch by Alwyn Berkeley <malachix@malachix.com>
+
+2008-05-06  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Ammo.cpp: Partially fix 1957249: don't include cstdio in
+	Ammo.cpp since it isn't used. Patch by Alwyn Berkeley
+	<malachix@malachix.com>
+
+2008-05-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* scripts/Makefile.all, scripts/Makefile.no-setup: When the
+	Makefiles do not exist, recreate them from the qmake files.
+
+2008-05-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/CHROMIUM.pro: Drop the X11 directories since qmake adds them
+	automatically.
+
+2008-05-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/CHROMIUM.pro: Don't need to specify the app template since it
+	is the default for qmake
+
+2008-05-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/CHROMIUM.pro: Turn on compiler warnings by default
+
+2008-05-05  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure: Use $(shell) rather than backticks
+
+2008-04-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure: Enable Vorbis support by default.
+
+2008-04-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src-setup/Audio.cpp, src-setup/ConfigFile.cpp,
+	src-setup/HelpPage.cpp, src-setup/HiScoreWidget.cpp,
+	src-setup/HiScoreWidget.h, src-setup/MainWidget.cpp,
+	src-setup/PlayList.cpp, src/Ammo.cpp, src/AudioOpenAL.cpp,
+	src/AudioSDLMixer.cpp, src/Config.cpp, src/EnemyAircraft.cpp,
+	src/EnemyAircraft_Boss00.cpp, src/EnemyAircraft_Boss01.cpp,
+	src/EnemyAircraft_Gnat.cpp, src/EnemyAircraft_Omni.cpp,
+	src/EnemyAircraft_RayGun.cpp, src/EnemyAircraft_Straight.cpp,
+	src/EnemyAircraft_Tank.cpp, src/EnemyAmmo.cpp, src/EnemyFleet.cpp,
+	src/Explosions.cpp, src/Global.h, src/GroundMetal.cpp,
+	src/GroundMetalSegment.cpp, src/GroundSea.cpp,
+	src/GroundSeaSegment.cpp, src/HeroAircraft.cpp, src/HeroAmmo.cpp,
+	src/HiScore.cpp, src/HiScore.h, src/MainGL.cpp, src/MainGLUT.cpp,
+	src/MainSDL.cpp, src/MainSDL_Event.cpp, src/MenuGL.cpp,
+	src/PowerUps.cpp, src/ScreenItem.cpp, src/ScreenItemAdd.cpp,
+	src/StatusDisplay.cpp, src/TexFont.cpp, src/extern.h, src/main.cpp: 
+	Use C++ versions of the C library headers. Patch from SuSE by
+	Philipp Thomas <pthomas@suse.de>
+
+2008-03-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Audio.h, src/AudioSDLMixer.cpp, src/HeroAircraft.cpp,
+	src/HiScore.cpp, src/MainGL.cpp, src/MainGL.h,
+	src/MainSDL_Event.cpp, src/MenuGL.h, src/StatusDisplay.cpp,
+	src/TexFont.cpp, src/TexFont.h: Fix some more warnings with G++ 4.3
+	and 4.2
+
+2008-03-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/EnemyFleet.cpp: Fix OpenSUSE 188219: fix some compiler
+	warnings from EnemyFleet.cpp. Patch by Ales Nosek from SUSE
+
+2008-03-14  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.desktop: Use the full name of the game in the
+	freedesktop menu.
+
+2008-03-12  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Enable using the spacebar for shooting
+	(just like the left mouse button).
+
+2008-03-12  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Fix Ubuntu #120872: ungrab the mouse when
+	we pause, regrab it when we unpause.
+
+2008-03-12  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: Try to load data from multiple sources so individual
+	data pieces can be customised.
+
+2008-03-11  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure, scripts/configure_functions, src/AudioSDLMixer.h: Apply
+	618995: make it easier to use SDL_Mixer instead of OpenAL
+
+2008-03-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.6: Add some enhancements to the manual page.
+
+2008-03-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* misc/chromium.6: Add a manual page from Debian.
+
+2008-03-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* : Use the ship image on the freedesktop menu.
+
+2008-03-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* chromium.desktop => misc/chromium.desktop: Move the freedesktop
+	menu file into the misc directory.
+
+2008-03-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* : Add a misc directory for various bits that will be shipped in
+	the source package.
+
+2008-03-07  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp, src/AudioOpenAL.h: Remove some unneeded casts
+	for g++ 4 and update some code to new OpenAL API. Patch by Mike Furr
+	<mfurr@debian.org>.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: Don't use unsafe strcpy calls, don't use an extra
+	level of subdir for the data.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/main.cpp: Look for chromium data in ~/.chromium-data/ before
+	looking in the system-wide data dir.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Allow using the mouse to start a new game
+	after dying. Patch from Debian bug 426817 by Brandon Barnes
+	<winterknight@nerdshack.com>.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/Global.cpp: Don't start paused if you restart it when paused.
+	Patch from Ubuntu LP 120869 by Siegfried-Angel Gevatter Pujals
+	<siggi.gevatter@gmail.com>.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/MainSDL_Event.cpp: Honour SDL_QUIT, allowing termination of
+	chromium. Patch from Debian bug #390313 by Brandon Barnes
+	<winterknight@nerdshack.com>.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/HeroAircraft.cpp: Fix a crash in the powerhup handling. Patch
+	from Debian bug #411614 by Brandon Barnes
+	<winterknight@nerdshack.com>.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/HiScore.cpp: Fix crash on 64-bit platforms in high score
+	loading. Patch from Debian bug #300150 by Alan Woodland
+	<ajw2@aber.ac.uk>.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src/AudioOpenAL.cpp: Fix a problem with quiet sound effects. Patch
+	from SuSE via Debian bug #215037.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* src-setup/Makefile, src/Makefile: Remove generated Makefiles from
+	the version control system.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* INSTALL, README.vorbis, configure, scripts/Makefile.all,
+	scripts/Makefile.no-setup, scripts/configure_functions,
+	src/CHROMIUM.pro, src/Makefile, src/Makefile.IRIX: Depend on
+	external libraries instead of embedding them.
+
+2008-02-26  Paul Wise <pabs3@bonedaddy.net>
+
+	* configure: The configure script relies on bash, change the shebang
+	so that it uses it.
+
+2004-09-07  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/Audio.h, src/AudioSDLMixer.cpp, src/AudioSDLMixer.h,
+	src/CHROMIUM.pro, src/MainSDL.cpp, src/MainSDL.h, src/Makefile: Fix
+	for easier builds
+
+2002-08-15  Mark B. Allan <mallanmba@yahoo.com>
+
+	* data/doc/faq.htm, data/doc/info.htm, src-setup/HelpPage.cpp,
+	src-setup/Makefile, src-setup/main.cpp, src/CHROMIUM.pro,
+	src/Config.cpp, src/Makefile: setup now builds with Qt3. The new
+	QtextBrowser, however, is screwing a lot of things up.
+
+2001-05-27  Mark B. Allan <mallanmba@yahoo.com>
+
+	* CHANGES, src-setup/ConfigFile.cpp, src-setup/HiScoreWidget.cpp,
+	src-setup/MainWidget.cpp, src-setup/Makefile, src-setup/SETUP.pro,
+	src-setup/main.cpp, src/CHROMIUM.pro, src/Makefile: Document a tex
+	change.  Rename some functions.  Adjust makefile stuff.  Setup thing
+	requires Qt3.
+
+2001-05-21  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src-setup/Makefile, src-setup/SETUP.pro, src/Audio.cpp,
+	src/AudioOpenAL.cpp, src/AudioSDLMixer.cpp, src/CHROMIUM.pro,
+	src/Config.cpp, src/Config.h, src/EnemyAircraft.cpp,
+	src/EnemyAircraft_Boss00.cpp, src/EnemyAircraft_Boss01.cpp,
+	src/EnemyAircraft_Gnat.cpp, src/EnemyAircraft_Omni.cpp,
+	src/EnemyAircraft_RayGun.cpp, src/EnemyAircraft_Straight.cpp,
+	src/EnemyAircraft_Tank.cpp, src/EnemyAmmo.cpp, src/Global.cpp,
+	src/GroundMetal.cpp, src/GroundMetalSegment.cpp,
+	src/HeroAircraft.cpp, src/HeroAmmo.cpp, src/MainGL.cpp,
+	src/MainGLUT.cpp, src/MainSDL.cpp, src/MainSDL_Event.cpp,
+	src/Makefile, src/MenuGL.cpp, src/PowerUps.cpp,
+	src/StatusDisplay.cpp, src/main.cpp: Made texture borders a command
+	line option.  changed a the get* member names in Config.
+
+2001-05-11  Mark B. Allan <mallanmba@yahoo.com>
+
+	* configure, src-setup/Audio.h, src-setup/ConfigFile.cpp,
+	src-setup/ConfigFile.h, src-setup/Makefile, src-setup/SETUP.pro,
+	src-setup/main.cpp, src/Audio.cpp, src/CHROMIUM.pro,
+	src/Config.cpp, src/Config.h, src/EnemyAircraft.cpp, src/Makefile: 
+	Added support for more than one CDROM drive.  Tweaked the Makefiles
+	a bit so builds should properly pick up the OpenAL version packaged
+	with Chromium.
+
+2001-05-07  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/EnemyAircraft.cpp, src/EnemyAircraft.h, src/MenuGL.cpp,
+	src/MenuGL.h: new +/- buttons, tweaked gndMetalBase02, other stuff
+
+2001-05-06  Mark B. Allan <mallanmba@yahoo.com>
+
+	* CHANGES, src/ScreenItemAdd.cpp: New enemy01-extra.png file.
+	Document EnemyAircraft split in the CHANGES.
+
+2001-05-05  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/CHROMIUM.pro, src/EnemyAircraft.cpp, src/EnemyAircraft.h,
+	src/EnemyAircraft_Boss00.cpp, src/EnemyAircraft_Boss00.h,
+	src/EnemyAircraft_Boss01.cpp, src/EnemyAircraft_Boss01.h,
+	src/EnemyAircraft_Gnat.cpp, src/EnemyAircraft_Gnat.h,
+	src/EnemyAircraft_Omni.cpp, src/EnemyAircraft_Omni.h,
+	src/EnemyAircraft_RayGun.cpp, src/EnemyAircraft_RayGun.h,
+	src/EnemyAircraft_Straight.cpp, src/EnemyAircraft_Straight.h,
+	src/EnemyAircraft_Tank.cpp, src/EnemyAircraft_Tank.h,
+	src/EnemyFleet.cpp, src/MainSDL_Event.cpp, src/Makefile,
+	src/MenuGL.cpp, src/ScreenItemAdd.cpp, src/main.cpp: -Major shakeup
+	with EnemyAircraft: split EnemyAircraft into separate subclasses to
+	get rid of the messy switch statements. Still in progress.
+	-Hopfully fixed locked firing situation.
+
+2001-05-03  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/HeroAircraft.cpp, src/MainSDL.cpp, src/Makefile: changed RGB
+	size to 565 instead of 555
+
+2001-04-29  Mark B. Allan <mallanmba@yahoo.com>
+
+	* CHANGES, INSTALL, src/Audio.cpp, src/AudioOpenAL.cpp,
+	src/CHROMIUM.pro, src/GroundMetal.cpp, src/MainSDL_Event.cpp,
+	src/MainToolkit.h, src/Makefile, src/MenuGL.cpp, src/MenuGL.h,
+	src/StatusDisplay.cpp: basic mouse support for menu.  wrap music
+	tracks.
+
+2001-04-12  Mark B. Allan <mallanmba@yahoo.com>
+
+	* CHANGES, src/MainSDL.cpp, src/MainSDL_Event.cpp, src/Makefile,
+	src/MenuGL.cpp, src/MenuGL.h: added rudimentary mouse support to
+	menu
+
+2001-04-11  Mark B. Allan <mallanmba@yahoo.com>
+
+	* : cursor texture
+
+2001-04-11  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/Global.cpp, src/Global.h, src/MainSDL_Event.cpp,
+	src/Makefile, src/MenuGL.cpp, src/MenuGL.h: start adding mouse
+	cursor to menu
+
+2001-04-01  Mark B. Allan <mallanmba@yahoo.com>
+
+	* CHANGES, scripts/configure_functions, src/AudioOpenAL.cpp,
+	src/AudioOpenAL.h, src/CHROMIUM.pro, src/GroundMetalSegment.cpp,
+	src/MainSDL.cpp, src/Makefile, src/ScreenItemAdd.cpp, src/extern.h,
+	src/main.cpp: Fixed  configure script version checking.
+
+2001-03-14  Max Horn <max@quendi.de>
+
+	* AUTHORS: Add a blank line to the AUTHORS file.
+
+2001-03-08  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/EnemyFleet.cpp, src/GroundMetal.cpp, src/HeroAircraft.cpp,
+	src/MainGL.cpp, src/MainGLUT.cpp, src/MainSDL.cpp,
+	src/MainSDL_Event.cpp, src/MenuGL.cpp, src/PowerUps.cpp,
+	src/ScreenItemAdd.cpp: cleaned up some bad search-and-replace cruft
+	for the Global singleton
+
+2001-03-06  Max Horn <max@quendi.de>
+
+	* macos/ChromiumPrefix.h: Files for building Chormium under MacOS,
+	using CodeWarrior Pro 6.
+
+2001-02-28  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/GroundMetal.cpp, src/GroundMetalSegment.cpp,
+	src/GroundMetalSegment.h, src/Makefile: futzing w/ multitexture
+
+2001-02-27  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/GroundMetalSegment.cpp, src/GroundMetalSegment.h: Split some
+	of the drawing code out into drawBlip and drawSurface functions.
+
+2001-02-27  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/AudioSDLMixer.cpp, src/CHROMIUM.pro, src/Config.cpp,
+	src/Config.h, src/Global.cpp, src/Makefile, src/TexFont.cpp: added
+	ability to have both SDL_Mixer and OpenAL in the same executable.
+	Choosing between them is done via Config->audioType.
+
+2001-02-20  Max Horn <max@quendi.de>
+
+	* src/MenuGL.cpp: Added #include <math.h> for cos()
+
+2001-02-20  Mark B. Allan <mallanmba@yahoo.com>
+
+	* CHANGES, README: Document environment variables in the README,
+	document a change.
+
+2001-02-13  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/Audio.cpp, src/Audio.h, src/AudioOpenAL.cpp, src/Makefile: 
+	minor changes
+
+2001-02-10  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/HiScore.cpp: cleaned up scope resolving in HiScore (no longer
+	necessary)
+
+2001-02-10  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/HiScore.cpp: Adjust some comments about the high score file
+	and environment variable.
+
+2001-02-10  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/Audio.cpp, src/Config.cpp, src/MainGLUT.cpp, src/MainSDL.cpp,
+	src/MainSDL_Event.cpp, src/MainToolkit.cpp, src/MainToolkit.h,
+	src/Makefile: fixed screenA typo. Made sure GLUT toolkit works.
+
+2001-02-10  Mark B. Allan <mallanmba@yahoo.com>
+
+	* data/doc/faq.htm, src-setup/MainWidget.cpp, src/HiScore.cpp,
+	src/HiScore.h: trivial change
+
+2001-02-10  Mark B. Allan <mallanmba@yahoo.com>
+
+	* scripts/Makefile.all, scripts/Makefile.no-setup: Get rid of a
+	couple of blank dotfiles.
+
+2001-02-10  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src-setup/moc/.dummyfile: added src-setup/moc to repository
+
+2001-02-10  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src-setup/ConfigFile.cpp, src-setup/Global.cpp,
+	src-setup/Global.h, src-setup/{HiScore.cpp => HiScoreWidget.cpp},
+	src-setup/{HiScore.h => HiScoreWidget.h}, src-setup/MainWidget.cpp,
+	src-setup/MainWidget.h, src-setup/Makefile, src-setup/PlayList.cpp,
+	src-setup/SETUP.pro, src-setup/main.cpp, src/AudioOpenAL.cpp,
+	src/Config.cpp, src/Config.h, src/Global.cpp, src/Global.h,
+	src/GroundMetalSegment.cpp, src/HeroAircraft.cpp, src/HiScore.cpp,
+	src/HiScore.h, src/MainGL.cpp, src/Makefile, src/MenuGL.cpp,
+	src/StatusDisplay.cpp, src/define.h, src/main.cpp: Config singleton
+	complete updated setup util to use new singletons
+
+2001-02-09  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/Audio.cpp, src/AudioOpenAL.cpp, src/AudioSDLMixer.cpp,
+	src/Config.cpp, src/Config.h, src/EnemyAircraft.cpp,
+	src/EnemyAmmo.cpp, src/Global.cpp, src/Global.h,
+	src/HeroAircraft.cpp, src/HeroAmmo.cpp, src/MainGL.cpp,
+	src/MainGLUT.cpp, src/MainSDL.cpp, src/MainSDL_Event.cpp,
+	src/Makefile, src/MenuGL.cpp, src/PowerUps.cpp,
+	src/StatusDisplay.cpp, src/define.h, src/main.cpp: conversion to
+	Config singleton still in progress
+
+2001-02-09  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/CHROMIUM.pro, src/Config.cpp, src/Config.h, src/HiScore.h,
+	src/Makefile: added Config singleton
+
+2001-02-09  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src/Global.cpp, src/Global.h, src/HiScore.cpp, src/HiScore.h,
+	src/MainGL.cpp, src/MenuGL.cpp, src/main.cpp: Finish up HiScore
+	singleton got rid of high score stuff in Global changed score
+	highlight time to 5 minutes
+
+2001-02-09  Mark B. Allan <mallanmba@yahoo.com>
+
+	* bin/.dummyfile, src/CHROMIUM.pro, src/Global.h, src/HiScore.cpp,
+	src/HiScore.h, src/Makefile: Drop GlobalStuff and add a HiScore
+	implementation.
+
+2001-02-09  Mark B. Allan <mallanmba@yahoo.com>
+
+	* src-setup/Makefile, src/Audio.cpp, src/Audio.h,
+	src/AudioOpenAL.cpp, src/AudioSDLMixer.cpp, src/CHROMIUM.pro,
+	src/EnemyAircraft.cpp, src/EnemyAircraft.h, src/EnemyAmmo.cpp,
+	src/EnemyAmmo.h, src/EnemyFleet.cpp, src/EnemyFleet.h,
+	src/Explosions.cpp, src/Explosions.h, src/Global.cpp, src/Global.h,
+	src/Ground.cpp, src/Ground.h, src/GroundMetal.cpp,
+	src/GroundMetalSegment.cpp, src/GroundSea.cpp,
+	src/HeroAircraft.cpp, src/HeroAircraft.h, src/HeroAmmo.cpp,
+	src/HeroAmmo.h, src/MainGL.cpp, src/MainGL.h, src/MainGLUT.cpp,
+	src/MainSDL.cpp, src/MainSDL.h, src/MainSDL_Event.cpp,
+	src/MainToolkit.cpp, src/MainToolkit.h, src/Makefile,
+	src/MenuGL.cpp, src/MenuGL.h, src/PowerUps.cpp, src/PowerUps.h,
+	src/ScreenItemAdd.cpp, src/ScreenItemAdd.h, src/StatusDisplay.cpp,
+	src/StatusDisplay.h, src/define.h, src/main.cpp: begin changing
+	Global static class to Game singleton
+
+2001-02-08  Mark B. Allan <mallanmba@yahoo.com>
+
+	* Initial import.  Removed external stuff in support subdir.  Removed
+	non-free music and sounds in data/wav subdir.
+

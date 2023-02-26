@@ -1,0 +1,175 @@
+Chromium B.S.U. 0.9.16.1
+ - Allow translations of Linux menu file
+ - Compile fixes
+
+Chromium B.S.U. 0.9.16
+ - Add SDL2 support
+ - Add version option
+ - Use different font for French
+ - Compile fixes
+
+Chromium B.S.U. 0.9.15.1
+ - Fix diagonal keypad keys
+ - Add Russian, Simplified Chinese translations
+ - Translation updates
+ - Compile fixes
+
+Chromium B.S.U. 0.9.15
+ - Fix some MacOS X portability issues
+ - Fix mouse grabbing and pause issue
+ - Change high scores to a text file
+ - Add Italian, Traditional Chinese translations
+ - Add support for playing on a keyboard
+ - Add new fourth level
+ - Translation updates
+
+Chromium B.S.U. 0.9.14.1
+ - Add new Swedish translation
+ - Add SDL_image texture loading backend
+ - Relicense to Clarified Artistic License for Fedora
+ - Fix keyboard handling at the end of level
+ - Fix build failures with new compilers
+ - Fix some issues found by valgrind
+ - Translation updates
+
+Chromium B.S.U. 0.9.14
+ - Migrate from chromium to chromium-bsu (and similar)
+ - Add new GLC text rendering backend allowing i18n
+ - Add German, Bulgarian & Spanish translations
+ - Don't save high scores without a new score
+ - Fix race condition, when losing your last
+   life & killing the boss, finish the game
+ - Allow using Pause as well as p to pause
+ - Restore sound & music volume at startup
+ - Fix the last few text rendering issues
+ - Release the mouse when losing focus
+ - Add a ChangeLog generated from git
+ - Add a window icon using SDL_image
+
+Chromium 0.9.13.3
+ - Improve portability to Gentoo, Windows, MacOS X
+ - Fix linking the GLUT window type
+ - Document the configuration in the manual page
+ - Desktop file improvements
+
+Chromium 0.9.13.2
+ - Allow specifying which alternative to use for SDL/GLUT & OpenAL/SDL Mixer
+ - Fix some issues with the fontconfig support
+ - Fix some memory leaks and OpenAL shutdown
+ - Fix the window title case in the SDL backend
+
+Chromium 0.9.13.1
+ - Fix path issue with the FreeDesktop menu item and icon
+ - Fix a compile warning with GCC and -O2
+ - Fix a couple of manual page issues
+ - Fix a typo in the README file
+
+Chromium 0.9.13
+ - a new release after many years of being abandoned!
+ - replaced non-free font code, sounds and music with free versions
+ - added patches accumulated in Debian, SuSE, Gentoo and the tracker
+ - depend on external libraries instead of embedding them
+ - add a manual page, freedesktop menu file and icon
+ - switch to autoconf and automake for build & install
+ - fix lots of memory leaks and other bugs
+ - compatibility with OpenAL Soft
+
+Chromium 0.9.12
+ - added command line option to disable tex border color calls. A few
+   people were having trouble w/ Chromium falling back to software
+   rendering w/ some DRI drivers. Maybe this will help?
+ - added mouse support to menu. +/- buttons can be clicked on items that
+   increment/decrement, else double click activates.
+ - music tracks resets to 0 if max is reached
+ - split EnemyAircraft into separate subclasses to get rid of the ugly
+   switch statements.
+
+Chromium 0.9.11a
+ - fixed configure script to properly detect SDL version.
+Chromium 0.9.11
+ - added high scores. Default is to have high scores per-user, but the
+   CHROMIUM_SCORE environment variable can be set to a common file for
+   site-wide scores (file must be read/writable for all users, of course).
+ - score was not resetting to 0 on new game. oops.
+ - if mixed data/music CD tracks, data tracks are now skipped
+ - Some code cleanup/rearrangement.
+
+Chromium 0.9.10
+ - fixed supershields remaining after suicide 'game over'
+ - fixed stupid buffer overflow typo in setup app.
+ - put in hack for detecting CD music tracks - SDL is adding 2
+   to the track type on some copied CDRs (will be fixed in SDL 1.1.7+)
+ - added support for setting CDROM volume through AL extensions.
+ - fixed up Win32 build
+ - some GL tweaks to improve visuals on 1.1 GL drivers.
+ - fixed audio destructor from bombing when audio is disabled.
+ - added Macintosh changes from Max Horn.
+ - stopped modifying musicMax with playlist when CD is enabled.
+ - added SDL_mixer option from Darrell Walisser so there is a decent
+   audio option for those platforms that OpenAL doesn't support very well.
+ - rearranged the Audio class because things were getting too messy.
+
+Chromium 0.9.9c
+ - fixed persistent exhaust when game over
+ - fixed CDROM w/ data only tracks
+ - added half-assed check for Qt in configure, and made it an enable option.
+Chromium 0.9.9b
+ - added Qt version check for using QSGIStyle in the setup app
+Chromium 0.9.9a
+ - changed 'configure' to './configure' for OPENAL_CONFIG_OPTS in config.mak
+ - fixed 'suicide while dead' bug.
+Chromium 0.9.9
+ - added CD music support
+ - added PlayList support - a simple list of WAV, MP3 and/or OGG files
+   (depending on what options are compiled into OpenAL) that are used
+   for background music.
+ - created the 'chromium-setup' Qt app that can set all options for Chromium,
+   and serves as an easy way to create the PlayList (browse for files,
+   play them, rearrange the list, etc).
+ - wrote a 'configure' script (not autoconf) that attempts to determine what
+   components are available for OpenAL support
+ - audio tweaks.
+ - integrated patches from Torbjörn Andersson and improved the pause mode.
+ - changed capitalization of dirs in data for consistency.
+
+Chromium 0.9.8
+ - too many changes to list in detail...
+ - new enemies, new bosses
+ - added self destruct option (double right-click)
+ - some major code rearrangement
+ - added gamma adjustment
+ - graphics improvements
+ - added 'auto_speed' flag - when enabled, it tries to maintain the proper
+   speed of the game, regardless of framerate. Can result in jerky playback
+   if framerate varies a lot, though (disabled by default).
+ - reversed default audio orientation. My stereo had its wires crossed ;)
+ - added an option to build with GLUT instead of SDL, but decided not to
+   make it the default. GLUT's 'game mode' is not well documented or
+   ubiquitous.
+
+Chromium 0.9.7
+ - code cleanup for portability. Compiles cleanly on Win32, IRIX and
+   RH7 (with audio disabled because of OpenAL issues) now.
+ - Changes from Sven M. Hallberg to separate Damage and Shield alpha.
+ - Redid the menu text geometry source a couple of times due to various
+   compiler difficulties.
+ - Reorganized some things so that GLUT can replace SDL at a later
+   date. I'm not really using much of SDL's functionality, and a GLUT
+   based project will be easier to build under Windows. SDL will remain
+   an option, however.
+ - Fixed ExploPop sound orientation when swap_stereo was enabled.
+ - Fixed stupid command line args goof.
+
+Chromium 0.9.6
+ - fixed sound glitch at startup. still glitches when fullscreen is toggled.
+ - added mouse speed to menu. When DGA is enabled in the X server and Chromium
+   is run full screen, the mouse responds very differently to windowed
+   mode. I'm assuming it's an SDL init thing.
+ - added "swap_stereo" flag to ~/.chromium init file. Set it to '1' to flip
+   audio output.
+ - Graphics tweaks
+ - Gameplay tweaks
+ - Added joystick support (but it sucks - use the mouse)
+
+Chromium 0.9.5
+ - Initial release
