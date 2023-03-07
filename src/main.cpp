@@ -6,6 +6,8 @@
  * "Clarified Artistic License"
  */
 
+#include <gl4esinit.h>
+
 #ifdef HAVE_CONFIG_H
 #include <chromium-bsu-config.h>
 #endif
@@ -56,6 +58,8 @@ int main(int argc, char **argv)
 	int i;
 	int	tmp;
 	int	vm = 2;
+
+	initialize_gl4es();
 
 #ifdef ENABLE_NLS
 	setlocale(LC_ALL, "");
@@ -219,7 +223,7 @@ const char* dataLoc(const char* filename, bool doCheck)
 #ifdef macintosh
 	#define DATADIR "::data"
 #else
-	#define DATADIR "../data"
+	#define DATADIR "data"
 #endif
 
 	if( (strlen(DATADIR)+strlen(filename)) < 254)

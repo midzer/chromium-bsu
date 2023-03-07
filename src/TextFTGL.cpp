@@ -132,7 +132,7 @@ const char* TextFTGL::findFont()
 	font that contains all the Unicode characters in use in	your translation.
 	If the font is available in Debian it should be the Debian path.
 	*/
-	CHECK_FONT_PATH(_("/usr/share/fonts/truetype/uralic/gothub__.ttf"))
+	CHECK_FONT_PATH(_("data/font/gothub__.ttf"))
 	/*
 	TRANSLATORS: If using the FTGL backend, this should be the path of a
 	font that contains all the Unicode characters in use in	your translation.
