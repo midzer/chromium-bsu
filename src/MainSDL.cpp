@@ -295,7 +295,7 @@ bool MainSDL::checkErrors()
 	gl_error = glGetError( );
 	if( gl_error != GL_NO_ERROR )
 	{
-		fprintf(stderr, _("ERROR!!! OpenGL error: %s\n"), gluErrorString(gl_error) );
+		fprintf(stderr, _("ERROR!!! OpenGL error: %s\n"), gl_error );
 		retVal = true;
 	}
 

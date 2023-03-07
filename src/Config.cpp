@@ -91,7 +91,7 @@ Config::Config()
 	m_audioType		= AudioOpenAL;
 	m_textType		= TextGLC;
 
-	readFile();
+	//readFile();
 }
 
 /**
@@ -99,7 +99,7 @@ Config::Config()
  */
 Config::~Config()
 {
-	saveFile();
+	//saveFile();
 }
 
 /**
