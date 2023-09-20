@@ -568,11 +568,11 @@ ac_hostname=`(hostname || uname -n) 2>/dev/null | sed 1q`
 #
 # Initializations.
 #
-ac_default_prefix=/usr/local
+ac_default_prefix=/usr
 ac_clean_files=
 ac_config_libobj_dir=.
 LIBOBJS=
-cross_compiling=no
+cross_compiling=yes
 subdirs=
 MFLAGS=
 MAKEFLAGS=
@@ -3558,7 +3558,7 @@ if test "$ac_test_CXXFLAGS" = set; then
   CXXFLAGS=$ac_save_CXXFLAGS
 elif test $ac_cv_prog_cxx_g = yes; then
   if test "$GXX" = yes; then
-    CXXFLAGS="-g -O2"
+    CXXFLAGS="-flto -O3 -fno-rtti -fno-exceptions -sUSE_SDL=2"
   else
     CXXFLAGS="-g"
   fi
@@ -8008,7 +8008,7 @@ return glBegin ();
 _ACEOF
 for ac_lib in '' $ax_check_gl_manual_libs_generic_extra_libs; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -8034,7 +8034,7 @@ fi
 $as_echo "$ac_cv_search_glBegin" >&6; }
 ac_res=$ac_cv_search_glBegin
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
 
                    ax_check_gl_lib_opengl="yes"
                    break
@@ -8306,7 +8306,7 @@ return glBegin ();
 _ACEOF
 for ac_lib in '' $ax_check_gl_manual_libs_generic_extra_libs; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -8332,7 +8332,7 @@ fi
 $as_echo "$ac_cv_search_glBegin" >&6; }
 ac_res=$ac_cv_search_glBegin
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
 
                    ax_check_gl_lib_opengl="yes"
                    break
@@ -8414,7 +8414,7 @@ return glBegin ();
 _ACEOF
 for ac_lib in '' $ax_check_gl_manual_libs_generic_extra_libs; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -8440,7 +8440,7 @@ fi
 $as_echo "$ac_cv_search_glBegin" >&6; }
 ac_res=$ac_cv_search_glBegin
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
 
                    ax_check_gl_lib_opengl="yes"
                    break
@@ -8760,7 +8760,7 @@ return gluBeginCurve ();
 _ACEOF
 for ac_lib in '' GLU glu MesaGLU glu32; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -8786,7 +8786,7 @@ fi
 $as_echo "$ac_cv_search_gluBeginCurve" >&6; }
 ac_res=$ac_cv_search_gluBeginCurve
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
   GLU_LIBS="${GLU_LIBS:-$ac_cv_search_gluBeginCurve}"
 fi
 
@@ -8869,7 +8869,7 @@ return gluBeginCurve ();
 _ACEOF
 for ac_lib in '' glu32 GLU glu MesaGLU; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -8895,7 +8895,7 @@ fi
 $as_echo "$ac_cv_search_gluBeginCurve" >&6; }
 ac_res=$ac_cv_search_gluBeginCurve
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
   GLU_LIBS="${GLU_LIBS:-$ac_cv_search_gluBeginCurve}"
 fi
 
@@ -9156,7 +9156,7 @@ return gluBeginCurve ();
 _ACEOF
 for ac_lib in '' GLU glu MesaGLU; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -9182,7 +9182,7 @@ fi
 $as_echo "$ac_cv_search_gluBeginCurve" >&6; }
 ac_res=$ac_cv_search_gluBeginCurve
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
   GLU_LIBS="${GLU_LIBS:-$ac_cv_search_gluBeginCurve}"
 fi
 
@@ -9254,7 +9254,7 @@ return gluBeginCurve ();
 _ACEOF
 for ac_lib in '' GLU glu MesaGLU; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -9280,7 +9280,7 @@ fi
 $as_echo "$ac_cv_search_gluBeginCurve" >&6; }
 ac_res=$ac_cv_search_gluBeginCurve
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
   GLU_LIBS="${GLU_LIBS:-$ac_cv_search_gluBeginCurve}"
 fi
 
@@ -9695,7 +9695,7 @@ fi
 
 fi
 
-    if test "X$ax_cv_check_glu_link" = "Xyes"; then :
+    if test "X$ax_cv_check_glu_link" = "Xno"; then :
 
 $as_echo "#define HAVE_GLU 1" >>confdefs.h
 
@@ -9719,7 +9719,7 @@ if test "${enable_ftgl+set}" = set; then :
 fi
 
 
-if test "x$enable_glc" != xno ; then
+if test "x$enable_glc" != xyes ; then
 	for ac_header in GL/glc.h
 do :
   ac_fn_c_check_header_mongrel "$LINENO" "GL/glc.h" "ac_cv_header_GL_glc_h" "$ac_includes_default"
@@ -9729,7 +9729,7 @@ if test "x$ac_cv_header_GL_glc_h" = xyes; then :
 _ACEOF
  HAVE_GL_GLC_H=yes
 else
-  HAVE_GL_GLC_H=no
+  HAVE_GL_GLC_H=yes
 fi
 
 done
@@ -9914,7 +9914,7 @@ fi
 if test "${with_font_path+set}" = set; then :
   withval=$with_font_path; FONT_PATH="$withval"
 else
-  FONT_PATH=""
+  FONT_PATH="/usr/share/fonts/truetype/open-sans/OpenSans-Bold.ttf"
 fi
 
 
@@ -10080,11 +10080,11 @@ fi
 	# Put the nasty error message in config.log where it belongs
 	echo "$SDL2_PKG_ERRORS" >&5
 
-	HAVE_SDL2=no
+	HAVE_SDL2=yes
 elif test $pkg_failed = untried; then
      	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
-	HAVE_SDL2=no
+	HAVE_SDL2=yes
 else
 	SDL2_CFLAGS=$pkg_cv_SDL2_CFLAGS
 	SDL2_LIBS=$pkg_cv_SDL2_LIBS
@@ -10229,7 +10229,7 @@ return glutMainLoop ();
 _ACEOF
 for ac_lib in '' glut32 glut; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -10255,7 +10255,7 @@ fi
 $as_echo "$ac_cv_search_glutMainLoop" >&6; }
 ac_res=$ac_cv_search_glutMainLoop
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
   GLUT_LIBS="${GLUT_LIBS:-$ac_cv_search_glutMainLoop}"
 fi
 
@@ -10338,7 +10338,7 @@ return glutMainLoop ();
 _ACEOF
 for ac_lib in '' glut; do
   if test -z "$ac_lib"; then
-    ac_res="none required"
+    ac_res=""
   else
     ac_res=-l$ac_lib
     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
@@ -10364,7 +10364,7 @@ fi
 $as_echo "$ac_cv_search_glutMainLoop" >&6; }
 ac_res=$ac_cv_search_glutMainLoop
 if test "$ac_res" != no; then :
-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+  test "$ac_res" = "" || LIBS="$ac_res $LIBS"
   GLUT_LIBS="${GLUT_LIBS:-$ac_cv_search_glutMainLoop}"
 fi
 
@@ -10906,11 +10906,11 @@ fi
 	# Put the nasty error message in config.log where it belongs
 	echo "$SDL2MIXER_PKG_ERRORS" >&5
 
-	HAVE_SDL2MIXER=no
+	HAVE_SDL2MIXER=yes
 elif test $pkg_failed = untried; then
      	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
-	HAVE_SDL2MIXER=no
+	HAVE_SDL2MIXER=yes
 else
 	SDL2MIXER_CFLAGS=$pkg_cv_SDL2MIXER_CFLAGS
 	SDL2MIXER_LIBS=$pkg_cv_SDL2MIXER_LIBS
@@ -11071,11 +11071,11 @@ fi
 	# Put the nasty error message in config.log where it belongs
 	echo "$SDL2IMAGE_PKG_ERRORS" >&5
 
-	HAVE_SDL2IMAGE=no
+	HAVE_SDL2IMAGE=yes
 elif test $pkg_failed = untried; then
      	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
-	HAVE_SDL2IMAGE=no
+	HAVE_SDL2IMAGE=yes
 else
 	SDL2IMAGE_CFLAGS=$pkg_cv_SDL2IMAGE_CFLAGS
 	SDL2IMAGE_LIBS=$pkg_cv_SDL2IMAGE_LIBS
@@ -11256,7 +11256,7 @@ $as_echo "#define TEXT_GLC 1" >>confdefs.h
 	TEXT_LIBS="-lglc32"
 
 	TEXT_TYPE=GLC
-elif test "x$HAVE_FTGL" = xyes -a "x$enable_ftgl" != xno ; then
+elif test "x$HAVE_FTGL" = xno -a "x$enable_ftgl" != xno ; then
 
 $as_echo "#define TEXT_FTGL 1" >>confdefs.h
 
