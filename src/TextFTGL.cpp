@@ -35,7 +35,7 @@ TextFTGL::TextFTGL()
 		fprintf(stderr, _("FTGL: error loading font: %s\n"), fontFile);
 		delete ftFont; ftFont = NULL;
 		free((void*)fontFile); fontFile = NULL;
-		throw _("FTGL: error loading font");
+		//throw _("FTGL: error loading font");
 	}
 	free((void*)fontFile); fontFile = NULL;
 	ftFont->FaceSize(24);

@@ -128,7 +128,7 @@ int MainGL::initGL()
 //----------------------------------------------------------
 void MainGL::loadTextures()
 {
-	try {
+	//try {
 #if defined(TEXT_GLC) && defined(TEXT_FTGL)
 		Config *config = Config::instance();
 		if(config->textType() == Config::TextGLC)
@@ -142,7 +142,7 @@ void MainGL::loadTextures()
 #else
 		#error "TEXT_GLC or TEXT_FTGL must be defined"
 #endif
-	}
+	/*}
 	catch (char* str)
 	{
 		fprintf(stderr, _("error loading font: %s\n"), str);
@@ -152,7 +152,7 @@ void MainGL::loadTextures()
 	{
 		fprintf(stderr, _("error loading font\n"));
 		exit(1);
-	}
+	}*/
 }
 
 //----------------------------------------------------------
