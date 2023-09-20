@@ -1,0 +1,8 @@
+AL/
+dist/
+freetype/
+freetype2/
+FTGL/
+GL/
+src/*.o
+src/.deps/*.Po
