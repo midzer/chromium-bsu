@@ -69,8 +69,6 @@
 MainGL::MainGL()
 {
 	game = Global::getInstance();
-	initGL();
-	loadTextures();
 }
 
 
@@ -80,11 +78,11 @@ MainGL::~MainGL()
 }
 
 //----------------------------------------------------------
-int MainGL::initGL()
+int MainGL::initGL(int w, int h)
 {
 	Config *config = Config::instance();
 	if( config->debug() ) fprintf(stderr, _("initGL()\n"));
-	reshapeGL(config->screenW(), config->screenH());
+	reshapeGL(w, h);
 
 	glDisable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
@@ -121,6 +119,8 @@ int MainGL::initGL()
 #ifdef IMAGE_GLPNG
 	pngSetViewingGamma(config->viewGamma());
 #endif
+
+	loadTextures();
 
 	return 0;
 }
@@ -448,7 +448,7 @@ void MainGL::drawTextGL(const char *string, float pulse, float scale)
  * incoming width and height are ignored - Config values are always used
  */
 //----------------------------------------------------------
-void MainGL::reshapeGL(int , int )
+void MainGL::reshapeGL(int w, int h)
 {
 	Config *config = Config::instance();
 	glMatrixMode(GL_PROJECTION);
@@ -458,5 +458,5 @@ void MainGL::reshapeGL(int , int )
 					config->screenNear(),
 					config->screenFar());
 	glMatrixMode(GL_MODELVIEW);
-	glViewport(0, 0, config->screenW(), config->screenH());
+	glViewport(0, 0, w, h);
 }

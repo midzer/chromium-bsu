@@ -143,6 +143,11 @@ MainSDL::MainSDL(int argc, char **argv)
 
 	//-- Create game
 	game->createGame();
+	if(game->mainGL) {
+		int w, h;
+		SDL_GL_GetDrawableSize(window, &w, &h);
+		game->mainGL->initGL(w, h);
+	}
 }
 
 MainSDL::~MainSDL()
@@ -328,7 +333,7 @@ bool MainSDL::setVideoMode()
 #define SDL_OPENGL SDL_WINDOW_OPENGL
 #define SDL_FULLSCREEN SDL_WINDOW_FULLSCREEN
 #endif
-	video_flags = SDL_OPENGL;
+	video_flags = SDL_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI;
 	if(config->fullScreen())
 		video_flags |= SDL_FULLSCREEN;
 
@@ -397,9 +402,6 @@ bool MainSDL::setVideoMode()
 #if !(SDL_VERSION_ATLEAST(2,0,0))
 	if( config->debug() ) fprintf(stderr, _("(bpp=%d RGB=%d%d%d depth=%d)\n"), glSurface->format->BitsPerPixel, rs, gs, bs, ds);
 #endif
-
-	if(game->mainGL)
-		game->mainGL->initGL();
 
 	return true;
 }

@@ -17,7 +17,7 @@ public:
 	MainGL();
 	~MainGL();
 
-	int		initGL();
+	int		initGL(int w, int h);
 	void	drawGL();
 	void	drawGameGL();
 	void	drawDeadGL();
