@@ -1,0 +1,7 @@
+[
+    "main",
+    "MainSDL::run()",
+    "SDL_Delay",
+    "Emscripten_GLES_SwapWindow",
+    "dynCall_v"
+]
