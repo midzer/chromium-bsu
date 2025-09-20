@@ -115,7 +115,7 @@ Config *Config::init()
 	}
 	else
 	{
-		fprintf(stderr, _("WARNING: Config::init() has already been called.\n"));
+		fprintf(stderr, "WARNING: Config::init() has already been called.\n");
 	}
 	return Config::m_instance;
 }
@@ -248,7 +248,7 @@ bool Config::readFile()
 		}
 		else
 		{
-			if( m_debug ) fprintf(stderr, _("WARNING: could not read config file (%s)\n"), configFilename);
+			if( m_debug ) fprintf(stderr, "WARNING: could not read config file (%s)\n", configFilename);
 			retVal = false;
 		}
 	}
@@ -311,12 +311,12 @@ bool Config::saveFile()
 #endif
 
 		fclose(file);
-		if( m_debug ) fprintf(stderr, _("wrote config file (%s)\n"), configFilename);
+		if( m_debug ) fprintf(stderr, "wrote config file (%s)\n", configFilename);
 		retVal = true;
 	}
 	else
 	{
-		fprintf(stderr, _("WARNING: could not write config file (%s)\n"), configFilename);
+		fprintf(stderr, "WARNING: could not write config file (%s)\n", configFilename);
 		retVal = false;
 	}
 

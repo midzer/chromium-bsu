@@ -120,7 +120,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			fprintf(stderr, _(
+			fprintf(stderr, 
 				"\n"
 				"--------------------------------------------------\n"
 				"Chromium B.S.U. options\n"
@@ -136,7 +136,7 @@ int main(int argc, char **argv)
 				"  -nb/--noblend        : disable blending (OpenGL)\n"
 				"  -nt/--notexborder    : do not set tex border color (OpenGL)\n"
 				"  -V/--version         : show version information\n"
-				"--------------------------------------------------\n\n"));
+				"--------------------------------------------------\n\n");
 			exit(0);
 		}
 	}
@@ -234,7 +234,7 @@ const char* dataLoc(const char* filename, bool doCheck)
 	{
 		if(stat(buffer, &sbuf) == -1)
 		{
-			fprintf(stderr, _("!! ERROR !! - "));
+			fprintf(stderr, "!! ERROR !! - ");
 			perror(buffer);
 		}
 	}
@@ -258,7 +258,7 @@ void printExtensions(FILE *fstream, const char* extstr_in)
 	strcpy(extstr, extstr_in);
 	walker = extstr;
 
-	fprintf(fstream, _("Extensions :"));
+	fprintf(fstream, "Extensions :");
 	while( (walker-extstr) < len )
 	{
 		space = strchr(walker, ' ');

@@ -164,7 +164,7 @@ void HeroAmmo::addAmmo(int type, float pos[3])
 	if(type >= 0 && type < NUM_HERO_AMMO_TYPES)
 	{
 		Config* config = Config::instance();
-		if( config->debug() ) fprintf(stderr, _("HeroAmmo::addAmmo(%d, <%f %f %f> )\n"), type, pos[0], pos[1], pos[2]);
+		if( config->debug() ) fprintf(stderr, "HeroAmmo::addAmmo(%d, <%f %f %f> )\n", type, pos[0], pos[1], pos[2]);
 		newAmmo = getNewAmmo();
 		newAmmo->init(pos, vel, ammoDamage[type]);
 		newAmmo->back = ammoRoot[type];
@@ -187,7 +187,7 @@ void HeroAmmo::printList(int type)
 		thisAmmo = ammoRoot[type];
 		while(thisAmmo)
 		{
-			fprintf(stderr, _("%p <--%p--> %p\n"), (void*)thisAmmo->back, (void*)thisAmmo, (void*)thisAmmo->next);
+			fprintf(stderr, "%p <--%p--> %p\n", (void*)thisAmmo->back, (void*)thisAmmo, (void*)thisAmmo->next);
 			thisAmmo = thisAmmo->next;
 		}
 	}

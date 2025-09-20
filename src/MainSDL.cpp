@@ -73,24 +73,24 @@ MainSDL::MainSDL(int argc, char **argv)
 
 	if( SDL_Init( initOpts ) < 0 )
 	{
-		fprintf(stderr,_("Couldn't initialize SDL: %s\n"), SDL_GetError());
+		fprintf(stderr,"Couldn't initialize SDL: %s\n", SDL_GetError());
 		exit( 1 );
 	}
-	if( config->debug() ) fprintf(stderr, _("SDL initialized.\n"));
+	if( config->debug() ) fprintf(stderr, "SDL initialized.\n");
 
 #ifdef WITH_JOYSTICK
 	int nj = SDL_NumJoysticks();
 	if(nj > 0)
 	{
-		if( config->debug() ) fprintf(stderr, _("num joysticks = %d\n"), nj);
+		if( config->debug() ) fprintf(stderr, "num joysticks = %d\n", nj);
 		joystick = SDL_JoystickOpen(0);
-		if( config->debug() ) fprintf(stderr, _("   joystick 0 = %p\n"), joystick);
+		if( config->debug() ) fprintf(stderr, "   joystick 0 = %p\n", joystick);
 		if(joystick)
 			SDL_JoystickEventState(SDL_ENABLE);
 	}
 	else
 	{
-		if( config->debug() ) fprintf(stderr, _("no joysticks found\n"));
+		if( config->debug() ) fprintf(stderr, "no joysticks found\n");
 		joystick = 0;
 	}
 #else
@@ -99,21 +99,21 @@ MainSDL::MainSDL(int argc, char **argv)
 
 	if( !setVideoMode() )
 	{
-		fprintf(stderr, _("Couldn't set video mode: %s\n"), SDL_GetError());
+		fprintf(stderr, "Couldn't set video mode: %s\n", SDL_GetError());
 		SDL_Quit();
 		exit(1);
 	}
 
 	if( config->debug() )
 	{
-		fprintf(stderr, _(
+		fprintf(stderr, 
 			"-OpenGL-----------------------------------------------------\n"
 			"Vendor     : %s\n"
 			"Renderer   : %s\n"
-			"Version    : %s\n"),
+			"Version    : %s\n",
 			glGetString(GL_VENDOR), glGetString(GL_RENDERER), glGetString(GL_VERSION) );
 		printExtensions(stderr,  (const char*)glGetString( GL_EXTENSIONS ));
-		fprintf(stderr, _("------------------------------------------------------------\n"));
+		fprintf(stderr, "------------------------------------------------------------\n");
 	}
 
 #ifdef ENABLE_WINDOW_ICON
@@ -224,14 +224,14 @@ bool MainSDL::run()
 					if(game->fps < 48.0 && game->gameSpeed < 1.0)
 					{
 						game->gameSpeed += 0.02;
-						if( config->debug() ) fprintf(stdout, _("init----> %3.2ffps gameSpeed = %g\n"), game->fps, game->gameSpeed);
+						if( config->debug() ) fprintf(stdout, "init----> %3.2ffps gameSpeed = %g\n", game->fps, game->gameSpeed);
 					}
 					else if(game->gameFrame > 20)
 					{
 						float tmp = 50.0/game->fps;
 						tmp = 0.8*targetAdj + 0.2*tmp;
 						targetAdj = floor(100.0*(tmp+0.005))/100.0;
-						if( config->debug() ) fprintf(stdout, _("init----> %3.2ffps targetAdj = %g, tmp = %g\n"), game->fps, targetAdj, tmp);
+						if( config->debug() ) fprintf(stdout, "init----> %3.2ffps targetAdj = %g, tmp = %g\n", game->fps, targetAdj, tmp);
 					}
 				}
 				else if( config->autoSpeed() && (game->fps > 30.0 && game->fps < 100.0))  // discount any wacky fps from pausing
@@ -244,7 +244,7 @@ bool MainSDL::run()
 					{
 						adjCount++;
 						game->speedAdj = tmp;
-						if( config->debug() ) fprintf(stdout, _("adjust--> %3.2f targetAdj = %g -- game->speedAdj = %g\n"), game->fps, targetAdj, game->speedAdj);
+						if( config->debug() ) fprintf(stdout, "adjust--> %3.2f targetAdj = %g -- game->speedAdj = %g\n", game->fps, targetAdj, game->speedAdj);
 					}
 					else
 						game->speedAdj = targetAdj;
@@ -253,7 +253,7 @@ bool MainSDL::run()
 					game->speedAdj = targetAdj;
 
 //				if( !(frames%500) )
-//					if( config->debug() ) fprintf(stdout, _("fps = %g speedAdj = %g\n"), game->fps, game->speedAdj);
+//					if( config->debug() ) fprintf(stdout, "fps = %g speedAdj = %g\n", game->fps, game->speedAdj);
 			}
 
 		}
@@ -265,7 +265,7 @@ bool MainSDL::run()
 
 	if(adjCount > 20)
 	{
-		fprintf(stderr, _(
+		fprintf(stderr, 
 			"%d speed adjustments required.\n"
 			"NOTE: The game was not able to maintain a steady 50 frames per\n"
 			"      second. You should consider reducing your screen resolution\n"
@@ -273,12 +273,12 @@ bool MainSDL::run()
 			"      -OR-\n"
 			"      make sure that you aren't running any system monitoring\n"
 			"      tools (like \'top\', \'xosview\', etc.) These kinds of tools\n"
-			"      can make it difficult to maintain a steady frame rate.\n"),
+			"      can make it difficult to maintain a steady frame rate.\n",
 			adjCount);
 	}
 
 	//-- Destroy our GL context, etc.
-	if( config->debug() ) fprintf(stderr, _("exit.\n"));
+	if( config->debug() ) fprintf(stderr, "exit.\n");
 	SDL_Quit();
 
 	return false;
@@ -295,7 +295,7 @@ bool MainSDL::checkErrors()
 	gl_error = glGetError( );
 	if( gl_error != GL_NO_ERROR )
 	{
-		fprintf(stderr, _("ERROR!!! OpenGL error: %s\n"), gluErrorString(gl_error) );
+		fprintf(stderr, "ERROR!!! OpenGL error: %s\n", gluErrorString(gl_error) );
 		retVal = true;
 	}
 
@@ -303,7 +303,7 @@ bool MainSDL::checkErrors()
 	sdl_error = SDL_GetError( );
 	if( sdl_error[0] != '\0' )
 	{
-		fprintf(stderr, _("ERROR!!! SDL error '%s'\n"), sdl_error);
+		fprintf(stderr, "ERROR!!! SDL error '%s'\n", sdl_error);
 		SDL_ClearError();
 		retVal = true;
 	}
@@ -369,24 +369,24 @@ bool MainSDL::setVideoMode()
 #if SDL_VERSION_ATLEAST(2,0,0)
 	window = SDL_CreateWindow("Chromium B.S.U.", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, w, h, video_flags);
 	if (!window) {
-		fprintf(stderr, _("Couldn't create window: %s\n"), SDL_GetError());
+		fprintf(stderr, "Couldn't create window: %s\n", SDL_GetError());
 		return false;
 	}
 
 	context = SDL_GL_CreateContext(window);
 	if (!context) {
-		fprintf(stderr, _("Couldn't create context: %s\n"), SDL_GetError());
+		fprintf(stderr, "Couldn't create context: %s\n", SDL_GetError());
 		return false;
 	}
 #else
 	if ( (glSurface = SDL_SetVideoMode( w, h, bpp, video_flags )) == NULL )
 	{
-		fprintf(stderr, _("Couldn't set video mode: %s\n"), SDL_GetError());
+		fprintf(stderr, "Couldn't set video mode: %s\n", SDL_GetError());
 		return false;
 	}
 	else
 	{
-		if( config->debug() ) fprintf(stderr, _("video mode set "));
+		if( config->debug() ) fprintf(stderr, "video mode set ");
 	}
 #endif
 
@@ -395,7 +395,7 @@ bool MainSDL::setVideoMode()
 	SDL_GL_GetAttribute( SDL_GL_BLUE_SIZE,	&bs);
 	SDL_GL_GetAttribute( SDL_GL_DEPTH_SIZE,	&ds);
 #if !(SDL_VERSION_ATLEAST(2,0,0))
-	if( config->debug() ) fprintf(stderr, _("(bpp=%d RGB=%d%d%d depth=%d)\n"), glSurface->format->BitsPerPixel, rs, gs, bs, ds);
+	if( config->debug() ) fprintf(stderr, "(bpp=%d RGB=%d%d%d depth=%d)\n", glSurface->format->BitsPerPixel, rs, gs, bs, ds);
 #endif
 
 	if(game->mainGL)

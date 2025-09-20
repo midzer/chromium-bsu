@@ -27,7 +27,7 @@ TextGLC::TextGLC() : Text()
 	context = glcGenContext();
 	glcContext(context);
 	if( GLC_NONE != glcGetError() )
-		throw _("GLC: couldn't set context");
+		throw "GLC: couldn't set context";
 
 	// Get default font
 	defaultFont = glcGenFontID();
@@ -38,7 +38,7 @@ TextGLC::TextGLC() : Text()
 	if some characters are not available though, so choose a font
 	that your language looks good in.
 	*/
-	glcNewFontFromFamily(defaultFont, _("Gothic Uralic"));
+	glcNewFontFromFamily(defaultFont, "Gothic Uralic");
 	if( GLC_NONE == glcGetError() ) {
 		glcFontFace(defaultFont, "Bold");
 		glcFont(defaultFont);

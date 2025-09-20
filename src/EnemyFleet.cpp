@@ -240,7 +240,7 @@ void	EnemyFleet::drawGL()
 	}
 	Config* config = Config::instance();
 	if(config->debug() && num)
-		fprintf(stderr, _("num enemies on screen = %d\n"), num);
+		fprintf(stderr, "num enemies on screen = %d\n", num);
 }
 
 //----------------------------------------------------------

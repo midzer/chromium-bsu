@@ -41,7 +41,7 @@ AC_ARG_WITH(macintosh,
 
 # gettext for internationalisation
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.18])
+AM_GNU_GETTEXT_VERSION([0.23.1])
 
 # Need OpenGL and GLU for drawing stuff
 AX_CHECK_GL

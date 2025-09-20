@@ -177,7 +177,7 @@ void	PowerUps::remove(PowerUp *pwr)
 	}
 	game->itemAdd->killScreenItem(pwr);
 	activeCount--;
-	if( config->debug() ) fprintf(stderr, _("active power ups = %d\n"), activeCount);
+	if( config->debug() ) fprintf(stderr, "active power ups = %d\n", activeCount);
 //	delete pwr;
 }
 
@@ -365,7 +365,7 @@ void PowerUp::seal()
 	}
 	else
 	{
-		fprintf(stderr, _("?? PowerUp::seal()"));
+		fprintf(stderr, "?? PowerUp::seal()");
 	}
 }
 
