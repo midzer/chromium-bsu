@@ -111,7 +111,7 @@ Global *Global::init()
 	}
 	else
 	{
-		fprintf(stderr, _("WARNING: Global::init() has already been called.\n"));
+		fprintf(stderr, "WARNING: Global::init() has already been called.\n");
 	}
 	return Global::instance;
 }
@@ -208,7 +208,7 @@ void Global::gotoNextLevel()
 void Global::createGame()
 {
 	Config *config = Config::instance();
-	if( config->debug() ) fprintf(stderr, _("Starting up..."));
+	if( config->debug() ) fprintf(stderr, "Starting up...");
 	mainGL		= new MainGL();
 	explosions	= new Explosions();
 	enemyFleet	= new EnemyFleet();
@@ -239,14 +239,14 @@ void Global::createGame()
 	newGame();
 
 	audio->setMusicMode(Audio::MusicMenu);
-	if( config->debug() ) fprintf(stderr, _("...startup complete.\n"));
+	if( config->debug() ) fprintf(stderr, "...startup complete.\n");
 }
 
 //----------------------------------------------------------
 void Global::deleteGame()
 {
 	Config *config = Config::instance();
-	if( config->debug() ) fprintf(stderr, _("Shutting down...\n"));
+	if( config->debug() ) fprintf(stderr, "Shutting down...\n");
 	delete mainGL;
 	delete enemyFleet;
 	delete hero;
@@ -259,14 +259,14 @@ void Global::deleteGame()
 	delete menu;
 	delete itemAdd;
 	delete audio;
-	if( config->debug() ) fprintf(stderr, _("...shutdown complete.\n"));
+	if( config->debug() ) fprintf(stderr, "...shutdown complete.\n");
 }
 
 //----------------------------------------------------------
 void Global::deleteTextures()
 {
 	Config *config = Config::instance();
-	if( config->debug() ) fprintf(stderr, _("deleteTextures()\n"));
+	if( config->debug() ) fprintf(stderr, "deleteTextures()\n");
 //	return;
 	glFinish();
 	mainGL->deleteTextures();
@@ -286,7 +286,7 @@ void Global::deleteTextures()
 void Global::loadTextures()
 {
 	Config *config = Config::instance();
-	if( config->debug() ) fprintf(stderr, _("Global::loadTextures()\n"));
+	if( config->debug() ) fprintf(stderr, "Global::loadTextures()\n");
 //	return;
 	glFinish();
 	mainGL->loadTextures();
@@ -349,7 +349,7 @@ void Global::generateRandom(bool r)
 	Global::randIndex = 0;
 	if(r)
 	{
-		if( config->debug() ) fprintf(stderr, _("Generating random sequences\n"));
+		if( config->debug() ) fprintf(stderr, "Generating random sequences\n");
 		for(int i = 0; i < 256; i++)
 		{
 			randI[i] = rand();

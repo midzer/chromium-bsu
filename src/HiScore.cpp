@@ -55,7 +55,7 @@ HiScore::HiScore()
 				default: hiScore[i][j] = 99.0; break;
 			}
 			//-- default player
-			sprintf(hiScoreName[i][j], _("nobody"));
+			sprintf(hiScoreName[i][j], "nobody");
 			//-- default date (01/01/2000);
 			hiScoreDate[i][j] = 946713600;
 		}
@@ -80,7 +80,7 @@ HiScore *HiScore::init()
 	}
 	else
 	{
-		fprintf(stderr, _("WARNING: HiScore::init() has already been called.\n"));
+		fprintf(stderr, "WARNING: HiScore::init() has already been called.\n");
 	}
 	return HiScore::instance;
 }
@@ -238,7 +238,7 @@ bool HiScore::saveFile()
 	}
 	else
 	{
-		fprintf(stderr, _("WARNING: could not write score file (%s)\n"), getFileName());
+		fprintf(stderr, "WARNING: could not write score file (%s)\n", getFileName());
 		retVal = false;
 	}
 	return retVal;
@@ -273,7 +273,7 @@ bool HiScore::readFile()
 
 				// Discard the comment line
 				if( fscanf(file,"%*[^\n]") == EOF )
-					fprintf(stderr, _("WARNING: error reading score file (%s)\n"), getFileName());
+					fprintf(stderr, "WARNING: error reading score file (%s)\n", getFileName());
 
 				char name[100];
 				struct tm time;
@@ -316,11 +316,11 @@ bool HiScore::readFile()
 			} else {
 				// Nasty old memory dump format
 				if( fread(hiScore,        sizeof(double), 10*HI_SCORE_HIST, file) != 10*HI_SCORE_HIST )
-					fprintf(stderr, _("WARNING: error reading old score file (%s)\n"), getFileName());
+					fprintf(stderr, "WARNING: error reading old score file (%s)\n", getFileName());
 				if( fread(hiScoreName, 64*sizeof(char),   10*HI_SCORE_HIST, file) != 10*HI_SCORE_HIST )
-					fprintf(stderr, _("WARNING: error reading old score file (%s)\n"), getFileName());
+					fprintf(stderr, "WARNING: error reading old score file (%s)\n", getFileName());
 				if( fread(hiScoreDate,    sizeof(time_t), 10*HI_SCORE_HIST, file) != 10*HI_SCORE_HIST )
-					fprintf(stderr, _("WARNING: error reading old score file (%s)\n"), getFileName());
+					fprintf(stderr, "WARNING: error reading old score file (%s)\n", getFileName());
 				fclose(file);
 				// Resave the file in plain text format
 				saveFile();
@@ -329,7 +329,7 @@ bool HiScore::readFile()
 		else
 		{
 			Config* config = Config::instance();
-			if( config->debug() ) fprintf(stderr, _("WARNING: empty score file (%s)\n"), getFileName());
+			if( config->debug() ) fprintf(stderr, "WARNING: empty score file (%s)\n", getFileName());
 			retVal = false;
 		}
 	}
@@ -340,11 +340,11 @@ bool HiScore::readFile()
 		if(file)
 		{
 			if( fread(hiScore,        sizeof(double), 10*HI_SCORE_HIST, file) != 10*HI_SCORE_HIST )
-				fprintf(stderr, _("WARNING: error reading old score file (%s)\n"), getFileName());
+				fprintf(stderr, "WARNING: error reading old score file (%s)\n", getFileName());
 			if( fread(hiScoreName, 64*sizeof(char),   10*HI_SCORE_HIST, file) != 10*HI_SCORE_HIST )
-				fprintf(stderr, _("WARNING: error reading old score file (%s)\n"), getFileName());
+				fprintf(stderr, "WARNING: error reading old score file (%s)\n", getFileName());
 			if( fread(hiScoreDate,    sizeof(time_t), 10*HI_SCORE_HIST, file) != 10*HI_SCORE_HIST )
-				fprintf(stderr, _("WARNING: error reading old score file (%s)\n"), getFileName());
+				fprintf(stderr, "WARNING: error reading old score file (%s)\n", getFileName());
 			fclose(file);
 
 			// Try to save the new file and delete the old one if successful
@@ -354,7 +354,7 @@ bool HiScore::readFile()
 		else
 		{
 			Config* config = Config::instance();
-			if( config->debug() ) fprintf(stderr, _("WARNING: could not read score file (%s)\n"), getFileName());
+			if( config->debug() ) fprintf(stderr, "WARNING: could not read score file (%s)\n", getFileName());
 			retVal = false;
 		}
 	}
@@ -446,13 +446,13 @@ int HiScore::check(int skill, float score)
 void HiScore::print(int skill)
 {
 	struct tm *tmptr;
-	fprintf(stderr, _("high scores:\n"));
+	fprintf(stderr, "high scores:\n");
 	for(int j = 0; j < HI_SCORE_HIST; j++)
 	{
 		tmptr = localtime(&hiScoreDate[skill][j]);
 		if (!tmptr)
 			break;
-		fprintf(stderr, _("%02d/%02d/%04d %16s %d\n"), 1+tmptr->tm_mon, tmptr->tm_mday, 1900+tmptr->tm_year,
+		fprintf(stderr, "%02d/%02d/%04d %16s %d\n", 1+tmptr->tm_mon, tmptr->tm_mday, 1900+tmptr->tm_year,
 				hiScoreName[skill][j], (int)(hiScore[skill][j]));
 	}
 }

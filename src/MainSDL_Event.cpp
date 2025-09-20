@@ -50,14 +50,14 @@ bool MainSDL::process(SDL_Event *event)
 	cnt++;
 	switch( event->type )
 	{
-	    case SDL_ACTIVEEVENT:		fprintf(stderr, _("%-5d SDL_ACTIVEEVENT  \n")		, cnt); break;
-	    case SDL_KEYDOWN:			fprintf(stderr, _("%-5d SDL_KEYDOWN  \n")			, cnt); break;
-	    case SDL_KEYUP: 			fprintf(stderr, _("%-5d SDL_KEYUP  \n")			, cnt); break;
-	    case SDL_MOUSEMOTION:		fprintf(stderr, _("%-5d SDL_MOUSEMOTION  \n")		, cnt); break;
-	    case SDL_MOUSEBUTTONDOWN:	fprintf(stderr, _("%-5d SDL_MOUSEBUTTONDOWN  \n")	, cnt); break;
-	    case SDL_MOUSEBUTTONUP: 	fprintf(stderr, _("%-5d SDL_MOUSEBUTTONUP  \n")	, cnt); break;
-		case SDL_JOYBUTTONDOWN: 	fprintf(stderr, _("%-5d SDL_JOYBUTTONDOWN  \n")	, cnt); break;
-		case SDL_JOYBUTTONUP:		fprintf(stderr, _("%-5d SDL_JOYBUTTONUP  \n")		, cnt); break;
+	    case SDL_ACTIVEEVENT:		fprintf(stderr, "%-5d SDL_ACTIVEEVENT  \n"		, cnt); break;
+	    case SDL_KEYDOWN:			fprintf(stderr, "%-5d SDL_KEYDOWN  \n"			, cnt); break;
+	    case SDL_KEYUP: 			fprintf(stderr, "%-5d SDL_KEYUP  \n"			, cnt); break;
+	    case SDL_MOUSEMOTION:		fprintf(stderr, "%-5d SDL_MOUSEMOTION  \n"		, cnt); break;
+	    case SDL_MOUSEBUTTONDOWN:	fprintf(stderr, "%-5d SDL_MOUSEBUTTONDOWN  \n"	, cnt); break;
+	    case SDL_MOUSEBUTTONUP: 	fprintf(stderr, "%-5d SDL_MOUSEBUTTONUP  \n"	, cnt); break;
+		case SDL_JOYBUTTONDOWN: 	fprintf(stderr, "%-5d SDL_JOYBUTTONDOWN  \n"	, cnt); break;
+		case SDL_JOYBUTTONUP:		fprintf(stderr, "%-5d SDL_JOYBUTTONUP  \n"		, cnt); break;
 		default:
 			break;
 	}
@@ -281,7 +281,7 @@ SDL_Event *MainSDL::getEvent(FILE *infile)
 					retVal = &ev;
 					break;
 				default:
-					fprintf(stderr, _("MainSDL::getEvent HUH?\n"));
+					fprintf(stderr, "MainSDL::getEvent HUH?\n");
 					break;
 			}
 			count++;
@@ -291,7 +291,7 @@ SDL_Event *MainSDL::getEvent(FILE *infile)
 			ok = fgets(buffer, 256, infile);
 		if(!ok)
 		{
-			fprintf(stderr, _("buffer = \"%s\n\""), buffer);
+			fprintf(stderr, "buffer = \"%s\n\"", buffer);
 			exit(1);
 		}
 	}
@@ -472,8 +472,8 @@ void MainSDL::keyDownGame(SDL_Event *event)
 		default:
 			if( config->debug() )
 			{
-				fprintf(stderr, _("key '%s' pressed\n"), SDL_GetKeyName(event->key.keysym.sym));
-				fprintf(stderr, _("game->gameFrame = %d\n"), game->gameFrame);
+				fprintf(stderr, "key '%s' pressed\n", SDL_GetKeyName(event->key.keysym.sym));
+				fprintf(stderr, "game->gameFrame = %d\n", game->gameFrame);
 			}
 			break;
 	}
@@ -637,7 +637,7 @@ void MainSDL::mouseButtonUp(SDL_Event *ev)
 void MainSDL::grabMouse(bool status, bool warpmouse)
 {
 	Config *config = Config::instance();
-	if( config->debug() ) fprintf(stderr, _("MainSDL::grabMouse(%d)\n"), status);
+	if( config->debug() ) fprintf(stderr, "MainSDL::grabMouse(%d)\n", status);
 
 	mouseToggle = status;
 	if(status)
@@ -661,7 +661,7 @@ void MainSDL::grabMouse(bool status, bool warpmouse)
 void MainSDL::joystickMotion(SDL_Event *)
 {
 //	static int c = 0;
-//	if( config->debug() ) fprintf(stderr, _("joy %05d : axis(%d), value(%d)\n"), c++, event->jaxis.axis, event->jaxis.value);
+//	if( config->debug() ) fprintf(stderr, "joy %05d : axis(%d), value(%d)\n", c++, event->jaxis.axis, event->jaxis.value);
 //	int xNow;
 //	int yNow;
 //	int xDiff;

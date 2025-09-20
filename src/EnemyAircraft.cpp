@@ -108,7 +108,7 @@ void EnemyAircraft::init(float *p, float randFact)
 //----------------------------------------------------------
 void EnemyAircraft::printNumAllocated(void)
 {
-	fprintf(stderr, _("%d EnemyAircraft allocated\n"), allocated);
+	fprintf(stderr, "%d EnemyAircraft allocated\n", allocated);
 }
 
 //----------------------------------------------------------

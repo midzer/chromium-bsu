@@ -307,7 +307,7 @@ void	Audio::setMusicIndex(int index)
 	{
 		if(musicMax)
 			musicIndex = index%musicMax;
-		if( config->debug() ) fprintf(stderr, _("Audio::setMusicIndex(%d)\n"), musicIndex);
+		if( config->debug() ) fprintf(stderr, "Audio::setMusicIndex(%d)\n", musicIndex);
 
 #ifdef USE_SDL_CDROM
 		if(cdrom)

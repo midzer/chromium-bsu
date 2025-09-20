@@ -104,7 +104,7 @@ void ScreenItemAdd::putScreenItems()
 					game->powerUps->addPowerUp( (PowerUp*)(curItem->item) );
 					break;
 				case ScreenItem::ItemHero:
-					fprintf(stderr, _("ScreenItemAdd::putScreenItems() Hero??? HUH???\n"));
+					fprintf(stderr, "ScreenItemAdd::putScreenItems() Hero??? HUH???\n");
 					break;
 			}
 			//delItem = curItem;
